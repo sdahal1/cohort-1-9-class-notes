@@ -222,7 +222,7 @@ function addTeamToCities(team={}, cities={}) {
     objectToUpdate.teams.push(team.name)
   }else{
     //add the key representing the given teams city to the cities collection and set the value to be an object with the keys totalNumberOfplayers, numchampionships, teams
-    cities[givenTeamsCity] = {
+    cities[givenTeamsCity]= {
       totalNumberOfPlayers: team.players.length,
       numberOfChampionships: team.championships,
       teams: [team.name]

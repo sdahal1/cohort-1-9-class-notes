@@ -1,0 +1,17 @@
+{
+  "name": "3.7-3.9-packages",
+  "version": "1.0.0",
+  "description": "Lecture on Module 3",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "keywords": [],
+  "author": "Rob",
+  "license": "ISC",
+  "dependencies": {
+    "faker": "^4.1.0",
+    "moment": "^2.29.4"
+  }
+}

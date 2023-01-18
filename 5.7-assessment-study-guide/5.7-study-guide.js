@@ -87,6 +87,10 @@ const students = {
 
 .reduce()
 .sort()
+    - callback function parameters -> 1st param: an element, 2nd param: another element
+    - callback returns a number (Negative num, 0, Postive num). Negative number-> a before b, positve number-> b before a
+    - Modifies the original array
+
 
 
 

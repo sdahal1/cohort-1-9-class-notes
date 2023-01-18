@@ -7,66 +7,92 @@ const instructors = require("../data/instructors");
 const students = require("../data/students");
 
 //1. Get Total courses count
-function getTotalCoursesCount(courses) {
+function getTotalCoursesCount(courses = []) {
     return courses.length;
 }
 
 // console.log(getTotalCoursesCount(courses))
 
 //2. Get Total accounts count
-function getTotalAccountsCount(accounts) {
+function getTotalAccountsCount(accounts = []) {
     return accounts.length;
 }
 
 //3. Find instructor by Id-> given array of instructors and an id, find the instructor object that matches the given id
-function findInstructorById(instructors, id) {
+function findInstructorById(instructors = [], id) {
     return instructors.find((instructor) => instructor.id === id);
 }
 
+// console.log(findInstructorById(instructors,3))
+
 //4. Find course by Id-> given array of courses and an id, find the course object that matches the given id
-function findCourseById(courses, id) {
+function findCourseById(courses = [], id = null) {
     return courses.find((course) => course.id === id);
 }
 
+// console.log(findCourseById(courses,2))
+
 //5. Find student by Id-> given array of students and an id, find the student object that matches the given id
-function findstudentById(students, id) {
+function findstudentById(students = [], id) {
     return students.find((student) => student.id === id);
 }
+// console.log(findstudentById(students, 2))
 
 //6. Given a list of students, return back the list of students sorted by their first name
-function sortStudentsByFirstName(students) {
-    students.sort((studentA, studentB) => {
+function sortStudentsByFirstName(students = []) {
+    const [...studentscopy] = students;
+    studentscopy.sort((studentA, studentB) => {
         return studentA.name.first.toLowerCase() <
             studentB.name.first.toLowerCase()
             ? -1
             : 1;
     });
-    return students;
+
+    return studentscopy;
 }
+
+// console.log("students outside function", students);
+// console.log(sortStudentsByFirstName(students))
+// console.log("students outside function", students);
 
 //7. Partition courses by student on pace
 //find the courses that have all students on pace and find courses that have at least one student not on pace. Return back an array containing 2 sub-arrays inside it. First sub-array will have the courses where all students are on pace, and the second sub-array will have the courses where not all students are on pace
 
-function partitionCoursesByStudentProgress(courses) {
-    //get list of courses where everyone is on pace
-    let onPaceCourses = courses.filter((course) => {
-        let areAllStudentsPassing = course.roster.every((student) => {
-            return student.onPace === true;
-        });
-        return areAllStudentsPassing;
-    });
+/* 
+output: 
+[
+    [course3Obj,course4Obj,course5Obj],
+    [course1Obj,course2Obj,course6Obj, course7Obj]
+]
 
-    let notOnPaceCourses = courses.filter((course) => {
-        let areAnyStudentsBehind = course.roster.some((student) => {
-            return student.onPace === false;
-        });
-        return areAnyStudentsBehind;
-    });
 
-    return [onPaceCourses, notOnPaceCourses];
+*/
+function partitionCoursesByStudentProgress(courses=[]) {
+    const onPaceCourses = [];
+    const notOnPaceCourses = [];
+    //look at each individual courseObj in courses array
+    courses.forEach((courseObj)=>{
+        //for each course, look at the roster property which is another array
+        console.log(courseObj.roster)
+            //loop through the roster array to look at each rosterObj
+        const isCourseOnPace = courseObj.roster.every((rosterObj)=>{
+            return rosterObj.onPace
+        })
+
+        //if every element in the roster array has a onPace == true, then push the current course object to onPaceCourses, else push to notOnPaceCourses
+        if(isCourseOnPace===true){
+            onPaceCourses.push(courseObj)
+        }else{
+            notOnPaceCourses.push(courseObj)
+        }
+
+    })
+
+    return [onPaceCourses,notOnPaceCourses]
+
 }
 
-// console.log(partitionCoursesByStudentProgress(courses))
+console.log(partitionCoursesByStudentProgress(courses))
 
 /* 
 
@@ -102,19 +128,7 @@ let oneCourse = {
 }
 */
 
-function getStudentsForCourse(course, students) {
-    let rosterList = course.roster;
-
-    let rosterStudents = rosterList.map((rosterObj) => {
-        let foundStudent = students.find(
-            (student) => student.id === rosterObj.studentId
-        );
-        foundStudent.onPace = rosterObj.onPace;
-        return foundStudent;
-    });
-
-    return rosterStudents.slice(0, 10);
-}
+function getStudentsForCourse(course, students) {}
 
 let oneCourse = {
     id: 1,
@@ -159,30 +173,7 @@ let student1 = {
     }
 */
 
-function getTotalNumberOfClassesEnrolledIn(student, courses) {
-    const { id } = student;
-    // let count = 0;
-    // courses.forEach(course=>{
-    //   course.roster.forEach(enrolledStudent=>{
-    //     if(enrolledStudent.studentId === id){
-    //       count++
-    //     }
-    //   })
-    // })
-    // console.log("count is-->", count)
-    // return count;
-
-    return courses.reduce((count, course) => {
-        let isStudentEnrolled = course.roster.some((enrollee) => {
-            return enrollee.studentId === id;
-        });
-        if (isStudentEnrolled === true) {
-            count++;
-        }
-
-        return count;
-    }, 0);
-}
+function getTotalNumberOfClassesEnrolledIn(student, courses) {}
 
 let student1 = {
     id: 1,
@@ -201,31 +192,7 @@ let student1 = {
 
 */
 
-function getCoursesStudentEnrolledIn(student, courses, instructors) {
-    //first find all the courses the student is enrolled in
-    const { id } = student;
-    let enrolledCourses = courses.filter((course) => {
-        //check if the course.rosters list has any student who'se id === the given student id
-        let doesStudentTakeThisCourse = course.roster.some((enrollee) => {
-            return enrollee.studentId === id;
-        });
-
-        return doesStudentTakeThisCourse;
-    });
-    //then of those courses, for each course find the instructor for that course and give back an array of courses with the instructor embedded into the course object
-    let result = enrolledCourses.map((course) => {
-        //find the author object for this course's author id
-        let matchingInstructor = instructors.find(
-            (instructor) => instructor.id === course.instructorId
-        );
-
-        course.instructor = matchingInstructor;
-
-        return course;
-    });
-
-    return result;
-}
+function getCoursesStudentEnrolledIn(student, courses, instructors) {}
 
 // console.log(getCoursesStudentEnrolledIn(student1, courses, instructors));
 
@@ -233,18 +200,7 @@ function getCoursesStudentEnrolledIn(student, courses, instructors) {
 11. Get count of courses who have at least on student not onPace- similar to getBooksBorrowedCount(books)
 */
 
-function getCoursesNotOnPaceCount(courses) {
-    return courses.reduce((count, courseObj) => {
-        let anyBodyNotOnPace = courseObj.roster.some(
-            (enrollee) => enrollee.onPace === false
-        );
-
-        if (anyBodyNotOnPace) {
-            count++;
-        }
-        return count;
-    }, 0);
-}
+function getCoursesNotOnPaceCount(courses) {}
 
 // console.log(getCoursesNotOnPaceCount(courses));
 
@@ -259,26 +215,7 @@ function getCoursesNotOnPaceCount(courses) {
 
 */
 
-const getMostCommonCategories = (courses) => {
-    let popularCategories = {};
-    courses.forEach((course) => {
-        if (course.category in popularCategories) {
-            popularCategories[course.category]++;
-        } else {
-            popularCategories[course.category] = 1;
-        }
-    });
-
-    let result = Object.keys(popularCategories).map((categoryName) => {
-        return { name: categoryName, count: popularCategories[categoryName] };
-    });
-
-    result.sort((a, b) => {
-        return b.count - a.count;
-    });
-
-    return result.slice(0, 2);
-};
+const getMostCommonCategories = (courses) => {};
 
 // console.log(getMostCommonCategories(courses));
 
@@ -294,17 +231,7 @@ Output in this format:
 ]
 */
 
-function getMostPopularCourses(courses) {
-    //find the most pop
-
-    return courses
-        .sort((a, b) => {
-            return b.roster.length - a.roster.length;
-        })
-        .map((course) => {
-            return { name: course.name, rosterSize: course.roster.length };
-        });
-}
+function getMostPopularCourses(courses) {}
 
 // console.log(getMostPopularCourses(courses));
 
@@ -321,30 +248,10 @@ Output in this format:
 
 */
 
-function instructorsOfLargestClasses(courses, instructors) {
-    let twoLargestCourses = courses
-        .sort((a, b) => {
-            return b.roster.length - a.roster.length;
-        })
-        .slice(0, 2);
-
-    return twoLargestCourses.map((course) => {
-        let instructorForCourse = instructors.find(
-            (instructor) => instructor.id === course.instructorId
-        );
-
-        let fullName = helperJoinFirstAndLastNames(
-            instructorForCourse.name.first,
-            instructorForCourse.name.last
-        );
-
-        return { name: fullName, numStudents: course.roster.length };
-    });
-}
+function instructorsOfLargestClasses(courses, instructors) {}
 
 function helperJoinFirstAndLastNames(first, last) {
     return `${first} ${last}`;
 }
 
 // console.log(getMostBusyInstructors(courses, instructors));
-

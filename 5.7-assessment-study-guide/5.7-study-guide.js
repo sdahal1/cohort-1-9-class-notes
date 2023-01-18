@@ -49,6 +49,10 @@ const students = {
     "Jessie": {
         finished: [1,3,4],
         notFinished: [2],
+    },
+    "Kevin": {
+        finished: [10,30,40],
+        notFinished: [2],
     }
 };
 
@@ -70,7 +74,15 @@ const students = {
     - does not modify original array -> store output in variable
     - outputs an array containing whatever you returned in the callback
 .some()
+    - callback function parameters -> 1st param: each element, 2nd param: index of each element
+    - callback returns a boolean
+    - does not modify original array -> store output in variable
+    - outputs true if any of the iterations in the .some() callback fn return true. 
 .every()
+    - callback function parameters -> 1st param: each element, 2nd param: index of each element
+    - callback returns a boolean
+    - does not modify original array -> store output in variable
+    - outputs true if ALL of the iterations in the .every() callback fn return true. Outputs false if even one of the callback functions iterations return false
 
 
 .reduce()
@@ -152,8 +164,78 @@ function hasStudentReadAllFromPublisher(books=[], students={}, publisherName, st
     return result;
 }
 
-console.log(hasStudentReadAllFromPublisher(books,students,"Simon & Schuster", "Steph"))
+// console.log(hasStudentReadAllFromPublisher(books,students,"Simon & Schuster", "Steph"))
 
 
+
+
+
+/* 
+4. Given an object containing all students, and two student names, determine if the first student has read any books that the second student has not read yet. If so, return true. If the first student has not read any books the second student has not read, return false.
+
+*/
+
+function hasFirstStudentReadSecondStudentsNotReadBooks(students={}, studentName1="", studentName2=""){
+    //look at and remember students object at the studentName1's finished list  [1]
+    const student1FinishedList = students[studentName1].finished;
+    //look at students object at the studentName2's notFinished list [3,4]
+    const student2UnfinishedList = students[studentName2].notFinished;
+
+    //if any numbers from the student1finishedList is on the student2UnfinishedList, then return true, else return false
+    const result = student1FinishedList.some((bookId)=>{
+        //need to return a boolean here
+        return student2UnfinishedList.includes(bookId);
+    })
+
+    return result
+}
+
+
+// console.log(hasFirstStudentReadSecondStudentsNotReadBooks(students, "Steph", "Lebron"))
+
+
+
+/* 
+5. Return all the student names who have read any book in the given student's notFinished books
+
+Inputs: object of students, student name
+
+*/
+
+
+function something(students={}, studentName=""){
+    //look at the given studentName's not finished books -> eg. [3,4]
+    const givenStudentUnfinishedList = students[studentName].notFinished;
+    let resultNames = [];
+    //look at every key value pair in our object students
+    for(let studentNameKey in students){
+        // console.log(studentNameKey) //keys in students
+        // console.log(students[studentNameKey]) //values in students
+        //peep the finished property of each student in the iteration
+        if(studentNameKey !== studentName){
+        
+            //checking IF is the name I want to compare to vs ignoring it
+            const currentStudentsFinishedList = students[studentNameKey].finished
+    
+            //check if the currentStudents finishedArray includes any number from the givenStudents not finished books. if they are then put the students name as a part of the final result of names
+            const hasCurrentStudentFinished = givenStudentUnfinishedList.some((bookId)=>{
+                //need to return a boolean here
+                return currentStudentsFinishedList.includes(bookId);
+            })
+    
+            console.log(studentNameKey, hasCurrentStudentFinished)
+    
+            //if hasStudentFinished is true, then make the student name part of our result
+            if(hasCurrentStudentFinished){
+                resultNames.push(studentNameKey)
+            }
+            
+        }
+    }
+
+    return resultNames
+}
+
+console.log(something(students,"Lebron"))
 
 

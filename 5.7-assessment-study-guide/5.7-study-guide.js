@@ -62,7 +62,7 @@ const students = {
     - callback function parameters -> 1st param: each element, 2nd param: index of each element
     - callback returns a boolean
     - does not modify original array -> store output in variable
-    - outputs first element that the callback returned true for 
+    - outputs first element that the callback returned true for or undefined if nothing matched
 .filter() 
     - callback function parameters -> 1st param: each element, 2nd param: index of each element
     - callback returns a boolean

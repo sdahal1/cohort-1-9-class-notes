@@ -321,9 +321,47 @@ function getCoursesStudentEnrolledIn(
 
 /*
 11. Get count of courses who have at least on student not onPace- similar to getBooksBorrowedCount(books)
+
+0
 */
 
-function getCoursesNotOnPaceCount(courses) {}
+function getCoursesNotOnPaceCount(courses=[]) {
+    //counter
+    // let count = 0;
+
+    // courses.forEach((course)=>{
+    //     const {roster} = course;
+    //     let isEveryoneOnPace = true;
+    //     roster.forEach((enrollee)=>{
+    //         if(enrollee.onPace === false) {
+    //             isEveryoneOnPace = false; 
+    //             return; 
+    //         }
+    //     })
+    //     if(isEveryoneOnPace === false){
+    //         count = count + 1
+    //     }
+    // })
+
+
+    let count = courses.reduce((accumulator,course)=>{
+        const {roster} = course;
+        let isEveryoneOnPace = roster.every((enrollee)=>{
+            return enrollee.onPace === true;
+        })
+
+        if(isEveryoneOnPace === false){
+            accumulator++;
+        }
+        return accumulator;
+    },0)
+    return count;
+
+
+    // return courses.reduce((accumulator,{roster})=> roster.every((enrollee)=> enrollee.onPace === true) ? accumulator : ++accumulator,0)
+
+
+}
 
 // console.log(getCoursesNotOnPaceCount(courses));
 
@@ -336,31 +374,82 @@ function getCoursesNotOnPaceCount(courses) {}
     { name: "Psychology", count: 2 },
 ]
 
+//result array
+[
+    {name: Software engineering, count: 1}
+  
+]
+
+
 */
 
-const getMostCommonCategories = (courses) => {};
+const getMostCommonCategories = (courses=[]) => {
+    //have an array to put things in
+    let result = [];
+
+    //look at each course
+    courses.forEach((courseObj)=>{
+        const {category} = courseObj;
+        //check if the result array contains an object with the property name that is equal the current courseObj's category
+        let found = result.find(obj=>{
+            return obj.name === category;
+        })
+
+        //if found is undefined we craete a new object and put it into result
+        if(found === undefined){
+            let newObj = {name: category, count: 1};
+            result.push(newObj);
+        }else{
+            found.count++;
+        }
+    })
+
+    return result;
+};
 
 // console.log(getMostCommonCategories(courses));
 
 /* 
-13. Get most popular courses- find the top 3 largest courses based on roster size
+13. Get most popular courses- find the top 2 largest courses based on roster size
 
 
 Output in this format: 
 [
   { name: 'Javascript Fundamentals', rosterSize: 5 },
-  { name: 'Bread And Cheddar- The Fundamentals', rosterSize: 4 },
-  { name: 'Python Fundamentals', rosterSize: 3 }
+  { name: 'Bread And Cheddar- The Fundamentals', rosterSize: 4 }
+]
+
+
+
+//result
+[
+
+    {name: , rosterSize: }
 ]
 */
 
-function getMostPopularCourses(courses) {}
+function getMostPopularCourses(courses=[]) {
+    const result = [];
+    courses.forEach(course=>{
+        const {name,roster} = course;
+        let obj = {name, rosterSize: roster.length};
+        result.push(obj);
+    })
+    
+    result.sort((objA, objB)=>{
+        return objB.rosterSize - objA.rosterSize;
+    })
+    // const [first,second] = result
+    // return [first,second]
+
+    return result.slice(0,2);
+}
 
 // console.log(getMostPopularCourses(courses));
 
 /* 
 
-14. Get instructors of largest classes.
+14. Get instructors of largest two classes.
 
 Output in this format: 
 
@@ -371,7 +460,26 @@ Output in this format:
 
 */
 
-function instructorsOfLargestClasses(courses, instructors) {}
+function instructorsOfLargestClasses(courses=[], instructors=[]) {
+    const result = [];
+    courses.forEach(course=>{
+        const {roster,instructorId} = course;
+        //find the instructor
+        const matchingInstructor = findInstructorById(instructors,instructorId);
+        const {name:{first,last}} = matchingInstructor
+        const formattedname = helperJoinFirstAndLastNames(first, last)
+        let obj = {name: formattedname, rosterSize: roster.length};
+        result.push(obj);
+    })
+
+    result.sort((objA, objB)=>{
+        return objB.rosterSize - objA.rosterSize;
+    })
+
+    return result.slice(0,2)
+}
+
+console.log(instructorsOfLargestClasses(courses, instructors))
 
 function helperJoinFirstAndLastNames(first, last) {
     return `${first} ${last}`;

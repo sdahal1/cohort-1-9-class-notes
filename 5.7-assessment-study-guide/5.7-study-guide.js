@@ -83,9 +83,12 @@ const students = {
     - callback returns a boolean
     - does not modify original array -> store output in variable
     - outputs true if ALL of the iterations in the .every() callback fn return true. Outputs false if even one of the callback functions iterations return false
-
-
 .reduce()
+    -takes a callback fn and a starting value to accumulate onto
+    - callback function parameters -> 1st param: accumulator, 2nd param: each element
+    - callback returns the accumulator
+    - does not modify original array -> store output in variable
+    - outputs the final value of the accumulator
 .sort()
     - callback function parameters -> 1st param: an element, 2nd param: another element
     - callback returns a number (Negative num, 0, Postive num). Negative number-> a before b, positve number-> b before a

@@ -21,7 +21,7 @@ function goToSecretLocation(lat, lon, passcode) {
             result = "Welcome.";
         } else {
             throw new Error("This is a new Error");
-            // throw "Nothing to see here!";
+            // throw "Nothing to see here!!";
         }
     } catch (error) {
         // console.log(typeof error)

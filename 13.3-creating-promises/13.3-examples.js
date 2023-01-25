@@ -20,18 +20,18 @@ const quotesTicket = new Promise((resolve, reject)=>{
         const lines = buffer.toString().split("\n"); //you get an array of quotes from quotes.txt
         quote = lines[Math.floor(Math.random() * lines.length)];
         return resolve(quote)
-
     });
 })
 
 
 
-
+console.log(quotesTicket);
 
 quotesTicket
     .then((msg)=>{ //.then() will run once the async code in the quotesTicket is resolved /finished running
         console.log(`Your quote is: ${quote}`);
         console.log("resolved message was", msg)
+        console.log("eating sandwich", quote)
     })
     .catch((error)=>{
         console.log(error)

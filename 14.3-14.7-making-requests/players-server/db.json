@@ -1,20 +1,6 @@
 {
   "players": [
     {
-      "name": "Lebron James",
-      "team": "Cavs",
-      "number_championships": 5,
-      "state": "Cleveland",
-      "id": "1"
-    },
-    {
-      "id": "2",
-      "name": "Steph Curry",
-      "team": "Warriors",
-      "number_championships": 4,
-      "state": "California"
-    },
-    {
       "id": "3",
       "name": "Allen Iverson",
       "team": "Sixers",
@@ -22,18 +8,11 @@
       "state": "Pennsylvania"
     },
     {
-      "name": "Luka The Don",
+      "name": "Luka Doncic future GOAT",
       "team": "Mavericks",
-      "number_championships": 1,
+      "number_championships": 100,
       "state": "Dallas",
       "id": "4"
-    },
-    {
-      "id": "5",
-      "name": "Kobe",
-      "team": "Lakers",
-      "number_championships": 5,
-      "state": "California"
     },
     {
       "id": "6",

@@ -1,11 +1,11 @@
 {
   "constellations": [
     {
-      "id": "UEUrlfX",
-      "name": "Columba",
-      "meaning": "Dove",
-      "starsWithPlanets": 3,
-      "quadrant": "SQ1"
+      "name": "Columba updated",
+      "meaning": "Dove updated",
+      "starsWithPlanets": 4,
+      "quadrant": "SQ1 updated",
+      "id": "UEUrlfX"
     },
     {
       "id": "zb8QvVt",
@@ -101,16 +101,16 @@
   ],
   "players": [
     {
-        "name": "Lebron James",
-        "ppg": 35
+      "name": "Lebron James",
+      "ppg": 35
     },
     {
-        "name": "Steph Curry",
-        "ppg": 32
+      "name": "Steph Curry",
+      "ppg": 32
     },
     {
-        "name": "Kevin Durant",
-        "ppg": 32
+      "name": "Kevin Durant",
+      "ppg": 32
     }
-]
+  ]
 }

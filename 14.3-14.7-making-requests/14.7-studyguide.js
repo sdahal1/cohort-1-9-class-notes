@@ -64,4 +64,4 @@ function destroyPlayer(id) {
         .catch(console.log)
 }
 
-destroyPlayer("iuNPVg5")
+// destroyPlayer("iuNPVg5")

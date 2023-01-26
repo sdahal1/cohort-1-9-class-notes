@@ -22,11 +22,11 @@
       "state": "Pennsylvania"
     },
     {
-      "id": "4",
-      "name": "Luka Doncic",
+      "name": "Luka The Don",
       "team": "Mavericks",
-      "number_championships": 0,
-      "state": "Dallas"
+      "number_championships": 1,
+      "state": "Dallas",
+      "id": "4"
     },
     {
       "id": "5",
@@ -48,6 +48,20 @@
       "team": "Bulls",
       "number_championships": 6,
       "state": "Illinois"
+    },
+    {
+      "name": "Jimmy Butler",
+      "team": "Heat",
+      "number_championships": 0,
+      "state": "Miami",
+      "id": "HgJbuAE"
+    },
+    {
+      "name": "Dwayne Wade",
+      "team": "Heat",
+      "number_championships": 3,
+      "state": "Miami",
+      "id": "RwNY5cW"
     }
   ]
 }

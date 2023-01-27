@@ -1,18 +1,11 @@
 {
   "players": [
     {
-      "id": "3",
-      "name": "Allen Iverson",
-      "team": "Sixers",
-      "number_championships": 0,
-      "state": "Pennsylvania"
-    },
-    {
-      "name": "Luka Doncic future GOAT",
+      "name": "Luka The Don",
       "team": "Mavericks",
-      "number_championships": 100,
+      "number_championships": 1,
       "state": "Dallas",
-      "id": "4"
+      "id": "3"
     },
     {
       "id": "6",

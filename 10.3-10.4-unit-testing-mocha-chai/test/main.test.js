@@ -16,7 +16,6 @@ describe("averageScore", ()=>{
             { name: "Shane Carey", score: 10 },
             { name: "Rebecca Mills", score: 8 },
             { name: "Catarina Lima", score: 9 },
-
         ]
         const expected = 9;
         const actual = averageScore(dataset);

@@ -15,7 +15,7 @@
     -Allows you to run javascript on your local machine.
 
 
--What is github vs git?
+-What is github vs git? - github is remote repo, git is local
 
 -what does git init do?
 

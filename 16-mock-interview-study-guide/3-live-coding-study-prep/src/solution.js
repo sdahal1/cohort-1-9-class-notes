@@ -104,16 +104,28 @@ const axios = require("axios");
 */
 
 //how should i write this function-> does it need a parameter? if so, what would be a good name?
-function getCoinMarketData2(coinName) {
-    
-
-    
-    
-}
+// function getCoinMarketData(coinName="") {
+//     //response.data.market_data
+//     return axios.get(`https://api.coingecko.com/api/v3/coins/${coinName}`)
+//         .then(response=>{
+//             console.log(response.data.market_data)
+//             return response.data.market_data
+//         })
+//         .catch(err=>{
+//             console.log(err.message);
+//             return err.message;
+//         })
+// }
 
 
 async function getCoinMarketData(coinName){
-    
+    try{
+       let response = await axios.get(`https://api.coingecko.com/api/v3/coins/${coinName}`)
+       return response.data.market_data
+    }catch(err){
+        console.log(err.message)
+        return err.message;
+    }
 }
 
 // getCoinMarketData("robcoin")
@@ -142,9 +154,24 @@ What if you had to give back this response for the api endpoint
 
 
 
-function getFormattedCoinData(coinName){
-    
+function getFormattedCoinData(coinName=""){
+    return axios.get(`https://api.coingecko.com/api/v3/coins/${coinName}`)
+        .then(({data})=>{
+            
+            let result = {
+                coinName: data.name,
+                genesis_date: data.genesis_date,
+                usd_price: data.market_data.current_price.usd,
+                ath_usd: data.market_data.ath.usd
+            }
+            return result
+        })
+        .catch((err)=>{
+            return err.message;
+        })
 }
+
+getFormattedCoinData("bitcoin")
 
 async function getFormattedCoinData2(coin){
    

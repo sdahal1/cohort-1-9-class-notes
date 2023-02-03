@@ -68,6 +68,7 @@
         //2. The assessment will help you practice that
 
 
+//Bonus review: DO PART 2 OF THIS STUDY GUIDE!
 
 
 

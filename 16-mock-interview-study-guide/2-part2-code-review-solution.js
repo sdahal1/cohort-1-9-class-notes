@@ -76,7 +76,6 @@ const getCoinInfo = async (coinObj) => {
     try{
         //what does await do? what is another way to "wait" for an api call to finish, or to wait for asynchronous code to complete and resolve?
         const coinResponse = await axios.get( `${baseurl}/${coinObj.id.toLowerCase()}`)//making an api call to get information on the coin objec we received as a parameter
-    
         return {
             name: coinObj.name,
             price: coinResponse.data.market_data.current_price.usd, ////why do we have .data here? what would it look like without the .data?
@@ -145,23 +144,15 @@ const getCoinsInfo = (coins=[]) => {
 
 
 async function listCoinsInfoFromCoinGecko() {
-    let response = await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false")
-    let arrayOfCoinObjects = await getCoinsInfo(response.data)
-    let coinData = getCoinInfo(arrayOfCoinObjects);
-//     return axios
-//         .get(
-//             "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
-//         )
-//         .then((response) => {
-//             return response.data; //response.data is our array of coins
-//         })
-//         // .then(getCoinsInfo)
-//         .then((arrayOfCoinObjects)=>{
-//             return getCoinInfo(arrayOfCoinObjects)
-//         })
-//         .then((coinData) => {
-//             return coinData;
-//         });
+    try{
+        const response = await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false");
+        const coinData = await getMultipleCoinsInfo(response.data);
+        return coinData
+
+    }catch(error){
+        console.log(error.message);
+        return error.message;
+    }
 }
 
 listCoinsInfoFromCoinGecko()

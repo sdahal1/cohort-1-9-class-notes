@@ -120,7 +120,7 @@ const getCoinInfo = async (coinObj) => {
     //the await just means wait for the response to come back before executing the next line of code. this is an alternative to .then() syntax
     const coinResponse = await axios.get(`${baseurl}/${coinObj.id.toLowerCase()}`);
     // can refactor the ^^^^ above line ^^^ is ---> const {data} = await axios.get(`${baseurl}/${coinObj.id.toLowerCase()}`);
-
+    
 
 
     //form the reponse we get back, return back an object that has some information from the api response.
@@ -155,8 +155,7 @@ const getCoinInfo = async (coinObj) => {
 
 
 const getMultipleCoinsInfo = (coins) => {
-
-    //from the given array of coins, create a new array that only contains coins from index 0-2
+    //What does .slice() do?
     let topThreeCoins = coins.slice(0,3) 
     //what is promise.all-> promise.all takes an array of promises, and it resolves all the promises at once
 
@@ -183,18 +182,9 @@ const getMultipleCoinsInfo = (coins) => {
 // ])
 
 
-function listCoinsInfoFromCoinGecko(){
-    // axios
-    //     .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false")
-    //     .then(response=> {
-    //         return response.data
-    //     })
-    //     .then(getMultipleCoinsInfo)
-    //     .then((coinData)=>{
-    //         return coinData
-    //     })
-
-    axios
+function async listCoinsInfoFromCoinGecko(){
+    
+    return axios
         .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false")
         .then(response=> {
             return response.data
@@ -205,16 +195,8 @@ function listCoinsInfoFromCoinGecko(){
         .then((coinData)=>{
             return coinData
         })
-}
+   
 
-
-async function listCoinsInfoFromCoinGecko2(){
-    let response = await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false")
-
-    let {data} = response;
-
-    let coinData = await getMultipleCoinsInfo(data);
-    return coinData;
 }
 
 

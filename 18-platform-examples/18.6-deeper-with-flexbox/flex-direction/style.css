@@ -25,6 +25,7 @@ main h2 {
 .row {
   flex-direction: row;
 }
+
 .col {
   flex-direction: column;
 }

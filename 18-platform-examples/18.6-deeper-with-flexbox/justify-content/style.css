@@ -1,0 +1,63 @@
+.red{
+    background-color: red;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.notbold{
+    font-weight: 100;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.item{
+    height: 100px;
+    width: 100px;
+    /* background-color: red; */
+    border: 1px solid black;
+}
+
+.row{
+    background-color: gray;
+    display: flex;
+    border: 1px solid hotpink;
+    /* flex-direction: column; */
+    /* height: 2000px; */
+    
+    /* justify-content: space-between; */
+    /* justify-content: space-around; */
+    gap: 10px;
+
+}
+
+.jc-center{
+    justify-content: center;
+}
+
+.jc-space-bw{
+    justify-content: space-between;
+}
+
+.jc-space-around{
+    justify-content: space-around;
+}
+
+.flex-start{
+    justify-content: flex-start;
+}
+
+.flex-end{
+    justify-content: flex-end;
+}
+
+.space-evenly{
+    justify-content: space-evenly;
+}

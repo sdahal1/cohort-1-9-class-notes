@@ -23,7 +23,8 @@ header nav ul {
   display: flex;
   flex-direction: row;
   padding-bottom: 0px;
-  max-width: 25%;
+  max-width: 40%;
+  border: 1px solid red;
 }
 
 .wrap {

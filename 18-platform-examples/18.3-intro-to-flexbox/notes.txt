@@ -1,0 +1,28 @@
+-Parent child relationships -> the parent element can also be called "container"
+
+-Inline elements vs block elements
+
+-Inline elements: allow other elements to be next to it horizontally (if there is enough space)
+    -Span
+    -img
+
+-Block elements: Does not allow other elements to be next to it (even if there is enough space)
+    -H1-H6 tags
+    -Divs
+    -p
+    -semantic tags like "main" and "section"
+
+-Flex container and flex items
+    1. Flex container is the element that is the parent and its display property is === flex
+        
+    2. Flex items are the direct children of the flex container
+
+
+
+-Properties for flex containers:
+    * display: flex;
+    * flex-direction: (row, column, row-reverse, column-reverse);
+    * gap: 10px
+
+-Properties for flex items:
+    * flex: 1 (number here) -> allows us to determine the proportion of available space that the child item takes up in its parent container

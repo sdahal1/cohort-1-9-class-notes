@@ -157,25 +157,30 @@ What if you had to give back this response for the api endpoint
 function getFormattedCoinData(coinName=""){
     return axios.get(`https://api.coingecko.com/api/v3/coins/${coinName}`)
         .then(({data})=>{
-            
-            let result = {
+            // console.log(data)
+            return {
                 coinName: data.name,
-                genesis_date: data.genesis_date,
-                usd_price: data.market_data.current_price.usd,
-                ath_usd: data.market_data.ath.usd
+                genesis_date: data.genesis_date
+
             }
-            return result
         })
         .catch((err)=>{
             return err.message;
         })
 }
 
-getFormattedCoinData("bitcoin")
+// getFormattedCoinData("bitcoin")
 
-async function getFormattedCoinData2(coin){
-   
-
+async function getFormattedCoinData2(coinName=""){
+    try{
+        const {data} = await axios.get(`https://api.coingecko.com/api/v3/coins/${coinName}`)
+        return {
+             coinName: data.name,
+             genesis_date: data.genesis_date
+        }   
+    }catch(err){
+        return err.message;
+    }
 }
 
 
@@ -203,9 +208,41 @@ What if you had to give back this response for the api endpoint
 */
 
 function getAllCoins(){
-   
+   return axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false")
+    .then(({data})=>{
+        let result = data.map((coin)=>{
+            return {
+                name: coin.name,
+                current_price: coin.current_price,
+                price_change_percentage_24h: coin.price_change_percentage_24h
+            }
+        })
+        return result;
+    })
+    .catch((err)=>{
+        return err.message;
+    })
 
 }
+
+
+function getAllCoinsShortSyntax(){
+    return axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false")
+        .then(({data})=> data.map((coin)=>
+                ({
+                    name: coin.name,
+                    current_price: coin.current_price,
+                    price_change_percentage_24h: coin.price_change_percentage_24h
+                })
+            )
+            
+        )
+        .catch((err)=>{
+            return err.message;
+        })
+    
+    
+    }
 
 getAllCoins()
 

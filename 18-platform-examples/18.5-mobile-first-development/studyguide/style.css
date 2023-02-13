@@ -1,0 +1,32 @@
+/* everything under 800px is mobile view, everything greater or equal to 800 is desktop */
+
+
+h1,h2,h3{
+    text-align: center;
+}
+
+
+img{
+    width: 100%;
+}
+
+
+@media all and (min-width: 800px){
+    .flex{
+        display:flex;
+        gap: 10px;
+    }
+
+    .item-double{
+        flex:2;
+    }
+
+    .item{
+        flex:1;
+    }
+
+    #footer img{
+        height: 200px;
+        width: 200px;
+    }
+}

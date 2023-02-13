@@ -1,0 +1,21 @@
+p{
+    font-size: 32px;
+}
+
+.nav{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* if the device width is at least 800px or more, run this code */
+@media all and (min-width: 800px){ 
+    p{
+        font-size: 20px;
+    }
+
+    .nav{
+        flex-direction: row;
+    }
+}

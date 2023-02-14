@@ -1,3 +1,29 @@
+/* 
+if flex direction is "row": Jusify Content-x axis, Align Items- y axis
+if flex direction is "column" Justify Content-y axis, Align Items- x axis
+
+*/
+
+
+
+.container{
+  border: 1px solid black;
+  display: flex;
+  height: 500px;
+  width: 500px;
+  /* flex-direction: column; */
+  /* align-items:center; */
+  /* align-items:flex-start; */
+  /* align-items:stretch; */
+  /* align-items:flex-end; */
+  align-items:baseline;
+
+}
+
+.container .item{
+  background-color: red;
+}
+
 main {
   width: 280px;
   margin: auto;
@@ -59,6 +85,10 @@ main {
   line-height: 50px;
   color: white;
   font-weight: bold;
-  font-size: 2em;
+  /* font-size: 2em; */
   text-align: center;
+}
+
+#lg-font{
+  font-size: 60px;
 }

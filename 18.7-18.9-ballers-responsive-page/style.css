@@ -31,12 +31,23 @@ section.primary-bg {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
 }
 
 
 
 /* -------  Navigation ------- */
+
+#menu{
+  display:flex;
+  /* border: 1px solid black; */
+  justify-content: center;
+}
+
+#menu li{
+  /* border: 1px solid white; */
+  font-size: 10px;
+}
 
 header {
   background-color:rgb(222, 78, 26);
@@ -90,6 +101,14 @@ form button {
   width: 100%;
 }
 
+form > div{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
 /* -------  Footer ------- */
 
 footer {
@@ -103,3 +122,74 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+@media all and (min-width:480px){
+  header{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .brand-name{
+    font-size: 50px;
+  }
+
+  form>div{
+    flex-direction:column;
+  }
+
+  form{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  form >div, form > button{
+    width: 20%;
+    /* border: 1px solid red; */
+  }
+
+  form input, form select{
+    width: 100%;
+    font-size: 10px;
+  }
+
+  form > button, form label {
+    font-size: 12px;
+  }
+
+  #history > div{
+    display: flex;
+    gap: 10px;
+  }
+
+  #history > div > img, #history > div > p {
+    width: 33%;
+  }
+
+  #history > div > img {
+    /* object-fit: contain; */
+  }
+
+  .row{
+    display: flex;
+    gap: 10px;
+  }
+
+  .row > div{
+    flex: 1;
+  }
+
+  #mount-rushmore img{
+    height: 400px;
+    /* width: 100%; */
+  }
+
+  #handling > .row > * {
+    /* width: 50%; */
+    flex: 1;
+  }
+
+
+
+
+
+}

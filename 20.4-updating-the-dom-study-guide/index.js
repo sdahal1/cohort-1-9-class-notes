@@ -60,16 +60,74 @@ addHeadingsAndImages();
 
 
 
+// 2. styleKittensandPuppies-> style all cats and dogs by adding the classlist "kitten" or "puppy" to the article containing either a kitten or a puppy
+//     eg: <article><h3>Puppy</h3></article> will look like <article class="puppy"><h3>Puppy 1</h3></article> and <article class="kitten"><h3>Kitten 1</h3></article>
+
+
+
+function styleKittensandPuppies(){
+    const allArticles = document.querySelectorAll("article"); 
+
+    allArticles.forEach((article)=>{
+        //add the classlist of puppy to each article
+        if(article.innerText.toLowerCase().includes("puppy")){
+            article.classList.add("puppy")
+        }else{
+            article.classList.add("kitten")
+        }
+    })
+}
+
+
+styleKittensandPuppies();
 
 
 
 
 
+// 3. separateCatsFromDogs
+//     -create a "kittens" section with the class of "kittens" to put kitten articles into
+//     -if the article has a kitten, remove it from that section and add it to a new section for kittens
+
+function separateCatsFromDogs(){
+    //create a section element
+    const kittensSection = document.createElement("section");
+    //give the section a class of "kittens"
+    kittensSection.classList.add("kittens");
+    //SELECT a reference point to an element that will be accepting this section as a child (div class="row")
+    const rowDiv = document.querySelector(".row");
+    //div.appendChild(section) - append the section as a child to the div.row
+    rowDiv.appendChild(kittensSection);
 
 
 
 
+    // Get the parent element of all articles
+    const puppiesSection = document.querySelector(".puppies");
 
+    // Select all articles so that we can go through each article and see if its should be stay in puppiesSection or move to kittensSection
+    const allArticles = document.querySelectorAll("article");
+    // const iseverythingaPuppy = Array.from(allArticles).every(elem=>{
+    //     return elem.innerText.toLowerCase().includes("puppy");
+    // })
+    // console.log(iseverythingaPuppy)
+    allArticles.forEach(article=>{
+        
+        //if the article's inner text contains "kitten" then remove it from puppiesSection and insert it as a child to the kittensSection
+        if(article.innerText.toLowerCase().includes("kitten")){
+            // then remove it from puppiesSection
+            // puppiesSection.removeChild(article)
+            kittensSection.appendChild(article);
+
+        }
+
+    })
+
+    // Remove that park
+    // main.removeChild(park);
+}
+
+separateCatsFromDogs();
 
 
 

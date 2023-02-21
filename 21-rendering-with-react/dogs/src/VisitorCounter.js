@@ -1,8 +1,9 @@
+import React from 'react';
 
-function VisitorCounter({ userName }) {
-  return <div>
-    You are visitor number {1 + 1}. Welcome, {userName}.
-  </div>
+function VisitorCounter({ num, userName }) {
+  return <React.Fragment>
+    You are visitor number {num + 1}. Welcome, {userName}.
+  </React.Fragment>
 }
 
 export default VisitorCounter;

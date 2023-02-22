@@ -8,8 +8,8 @@ function Dog({ name, imageUrl }) {
 
   return (
     <div>
-      <h3>{name}</h3>
-      <img src={imageUrl} />
+      <h3 className="dog-h3">{name}</h3>
+      <img src={imageUrl} alt={name} />
       {name === 'husky' && (<p>The goodest boy</p>)}
     </div>
   )

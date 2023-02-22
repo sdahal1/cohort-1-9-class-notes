@@ -1,3 +1,8 @@
 img {
   max-width: 150px;
+  box-shadow: 10px 5px black;
+}
+
+.dog-h3 {
+  color: teal;
 }

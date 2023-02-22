@@ -1,11 +1,14 @@
+import React from 'react';
 
 function Cat({ name, activities }) {
-  return <div>
-    <h3>{name}</h3>
+  return <React.Fragment>
+    <h3 className="btn btn-warning">{name}</h3>
     {activities && (
-      <p>Hobbies include: {activities.join(', ')}</p>
+      <ul>
+        {activities.map(activity => (<li key={activity}>{activity}</li>))}
+      </ul>
     )}
-  </div>
+  </React.Fragment>
 }
 
 export default Cat;

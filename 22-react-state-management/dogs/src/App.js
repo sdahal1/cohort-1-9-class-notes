@@ -28,7 +28,7 @@ function App() {
         This app displays dog information. We love dogs.
       </p>
       <CatsList />
-      {/* <DogsList /> */}
+      <DogsList />
       <VisitorCounter userName={userName} numVisitors={numVisitors} incrementNumVisitors={incrementNumVisitors} />
     </div>
   );

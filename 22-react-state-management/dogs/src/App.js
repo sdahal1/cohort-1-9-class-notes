@@ -15,7 +15,10 @@ function App() {
   // when this function is called, it sets the 
   // number of visitors to be the current number plus 1.
   function incrementNumVisitors() {
+    console.log(numVisitors);
     setNumVisitors(numVisitors => numVisitors + 1)
+    // numVisitors here will continue to be the old value, because line 19 runs asynchronously
+    console.log(numVisitors);
   }
 
   return (

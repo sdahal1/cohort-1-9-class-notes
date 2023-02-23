@@ -4,7 +4,10 @@ import App from '../App';
 import '@testing-library/jest-dom';
 
 test('renders dogs header', () => {
-  render(<App />);
-  const dogs = screen.getAllByText(/Dogs/i)[0];
-  expect(dogs).toBeInTheDocument();
+  // render the component
+  render(<App />)
+  // grab the element I want to test
+  const dogs = screen.getByText("Dogs");
+  // check that it's there/visible/whatever I want to check
+  expect(dogs).toBeVisible();
 });

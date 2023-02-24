@@ -17,7 +17,7 @@ function Cat({ cat, addHobbyToCat }) {
           ))}
         </ul>
         <label htmlFor={`${name}-hobby`}>Add hobby</label>
-        <input id={`${name}-hobby`} type="text" name="hobby" onChange={updateNewHobby} />
+        <input id={`${name}-hobby`} type="text" name="hobby" onChange={updateNewHobby} value={newHobby} />
         <button className="btn btn-primary" onClick={(e) => addHobbyToCat(newHobby, cat)}>Add hobby</button>
       </>
     )}

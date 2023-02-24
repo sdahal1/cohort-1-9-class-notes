@@ -1,4 +1,6 @@
 import { useState } from 'react';
+
+import AddDog from './AddDog';
 import Dog from "./Dog";
 
 function DogsList() {
@@ -19,6 +21,11 @@ function DogsList() {
       goodness: 0
     }
   ]);
+
+  function addDog(newDog) {
+    newDog.goodness = 0;
+    setDogs([...dogs, newDog]);
+  }
 
   function incrementDogGoodness(dogToIncrement) {
     // map through the dogs array
@@ -43,6 +50,7 @@ function DogsList() {
     <main>
       <h2>Dogs List</h2>
       {dogs.map(dog => <Dog key={dog.name} dog={dog} incrementDogGoodness={incrementDogGoodness} />)}
+      <AddDog addDog={addDog} />
       {/* <Dog name={dogs[0].name} imageUrl={dogs[0].imageUrl} />
       <Dog name={dogs[1].name} imageUrl={dogs[1].imageUrl} />
       <Dog name={dogs[2].name} imageUrl={dogs[2].imageUrl} /> */}

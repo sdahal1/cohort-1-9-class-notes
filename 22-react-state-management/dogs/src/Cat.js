@@ -4,8 +4,18 @@ function Cat({ cat, addHobbyToCat }) {
   const { name, activities } = cat;
   const [newHobby, setNewHobby] = useState('');
 
-  const updateNewHobby = (e) => {
+  const otherCoolFunction = () => {
+    return 2;
+  }
+  const updateNewHobby = (e, currentCatName) => {
+    console.log('current cat is', currentCatName)
+    console.log(newHobby)
     setNewHobby(e.target.value);
+  }
+
+  function handleChange(e, name) {
+    updateNewHobby(e, name);
+    otherCoolFunction();
   }
   return <React.Fragment>
     <h3 className="btn btn-warning">{name}</h3>
@@ -17,8 +27,8 @@ function Cat({ cat, addHobbyToCat }) {
           ))}
         </ul>
         <label htmlFor={`${name}-hobby`}>Add hobby</label>
-        <input id={`${name}-hobby`} type="text" name="hobby" onChange={updateNewHobby} value={newHobby} />
-        <button className="btn btn-primary" onClick={(e) => addHobbyToCat(newHobby, cat)}>Add hobby</button>
+        <input id={`${name}-hobby`} type="text" name="hobby" onChange={e => handleChange(e, name)} value={newHobby} />
+        <button className="btn btn-primary" onClick={() => addHobbyToCat(newHobby, cat)}>Add hobby</button>
       </>
     )}
   </React.Fragment>

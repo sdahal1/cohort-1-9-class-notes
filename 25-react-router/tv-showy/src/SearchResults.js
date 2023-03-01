@@ -6,7 +6,7 @@ function SearchResults({ searchResults }) {
     {searchResults.map(result => <div key={result.show.id}>
       <h4>{result.show.name}</h4>
       {result.show.image && <img src={result.show.image.medium} />}
-      <Link to={`/movies/${result.show.id}`}>See More</Link>
+      <Link to={`/shows/${result.show.id}`}>See More</Link>
     </div>)}
   </div>
 }

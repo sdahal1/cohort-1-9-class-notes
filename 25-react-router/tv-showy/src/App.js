@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, useHistory, useLocation } from 'react-r
 import Search from './Search';
 import SearchResults from './SearchResults';
 import './App.css';
-import Movie from './shows/Show';
+import Show from './shows/Show';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -23,7 +23,7 @@ function App() {
         console.log(data);
         setSearchResults(data);
       } catch (error) {
-        if (error.name !== 'AbortError') {
+        if (error.name === 'AbortError') {
           console.log('aborted')
         } else {
           throw error;
@@ -49,18 +49,19 @@ function App() {
   return (
     <Router>
       <div>
+        <h1>Welcome to TV Showy!
+          <button onClick={e => setCount(count + 1)}>Increase Count ({count})</button>
+        </h1>
         <Route path="/" exact={true}>
-          <h1>Welcome to TV Showy!
-            <button onClick={e => setCount(count + 1)}>Increase Count ({count})</button>
-          </h1>
+
           <Search searchTerm={q} setSearchTerm={setQ} />
           {q && <p>
             You searched for {q}.
           </p>}
           <SearchResults searchResults={searchResults} />
         </Route>
-        <Route path="/movies/:id">
-          <Movie />
+        <Route path="/shows/:id">
+          <Show />
         </Route>
       </div>
     </Router>

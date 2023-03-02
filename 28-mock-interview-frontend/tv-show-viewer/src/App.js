@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   const [shows, setShows] = useState([]);
   useEffect(() => {
-    fetch("https://api.tvmaze.com/shows?page=15")
+    fetch("https://api.tvmaze.com/shows?page=1")
       .then(response => response.json())
       .then(data => setShows(data));
   })

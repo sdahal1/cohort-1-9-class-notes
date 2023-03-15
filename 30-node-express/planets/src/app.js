@@ -15,8 +15,8 @@ app.use(morgan('dev'));
 // what to do when a request comes in at that path?
 // this is a handler: sends something in the response
 
-app.get('/', (req, res, next) => {
-  res.send('1. this is still root and it is refreshing now');
+app.get('/', (req, response, next) => {
+  response.send('1. this is root');
 })
 
 // this will never run! the above handler will send back its response
@@ -28,28 +28,28 @@ app.get('/', (req, res, next) => {
 app.get('/current-time', (req, res, next) => {
   let now = new Date();
   // toSting, misspelled, so it will go to error handling
-  res.send(now.toSting());
+  res.send(now.toString());
 })
 
 function validateName(req, res, next) {
   // if the name exists and is valid, just move to the next piece of middleware in the pipeline
   if (req.query.name) {
-    next();
-  } else {
-    // if the name wasn't valid, go into error handling
-    next('Did not include a name');
+    return next();
   }
+  // if the name wasn't valid, go into error handling
+  return next('Did not include a name');
+
 }
 
+function validateNameLength(req,res, next) {}
 // app-level middleware: runs on every request
 // bad because not every request should have a name
 // app.use(validateName);
 
 // route-level middleware: runs only for this route
-app.get('/greeting', validateName, (req, res, next) => {
-  // let name = req.query.name;
+app.get('/greeting', validateName, validateNameLength, (req, res, next) => {
   let { name, planet = 'Earth' } = req.query;
-
+  
   res.send(`greetings from planet ${planet}, ${name}!`);
 })
 
@@ -63,12 +63,13 @@ let fartherPlanets = ['Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
 app.get('/planets/:planet', (req, res, next) => {
   let { planet } = req.params;
   if (closerPlanets.includes(planet)) {
-    res.send(`The planet ${planet} is closer to the Sun than Earth.`)
+    return res.send(`The planet ${planet} is closer to the Sun than Earth.`)
   } else if (fartherPlanets.includes(planet)) {
-    res.send(`The planet ${planet} is farther from the Sun than Earth`)
+    return res.send(`The planet ${planet} is farther from the Sun than Earth`)
   } else {
-    res.send(`I don't know about ${planet}.`);
+    return res.send(`I don't know about ${planet}.`);
   }
+  res.send('this will never happen thanks to the returns');
 })
 
 // using planets data from data directory

@@ -39,7 +39,7 @@ function validateName(req, res, next) {
     return next();
   }
   // if the name wasn't valid, go into error handling
-  return next('Did not include a name');
+  return next({ message: 'Did not include a name', status: 400 });
 
 }
 
@@ -70,7 +70,7 @@ const listPlanets = (req, res, next) => {
     res.send(limitedDataPlanets);
   } else {
     // otherwise, send everything
-    res.send(planets);
+    res.send({ data: planets });
   }
 };
 
@@ -81,7 +81,7 @@ const validatePlanetExists = (req, res, next) => {
     next();
   } else {
     // the planet does exist, life is bad, error handle
-    next(`no planet found with id ${req.params.id}`)
+    next({ message: `no planet found with id ${req.params.id}`, status: 404 })
   }
 }
 
@@ -91,7 +91,7 @@ const readPlanet = (req, res, next) => {
   const { id } = req.params;
   // use the id to find just the planet we're looking for in the planets array
   const planet = planets.find(planet => planet.id === id);
-  res.send(planet);
+  res.send({ data: planet });
 
 };
 
@@ -102,7 +102,7 @@ const createPlanet = (req, res, next) => {
   // data.id = nextId;
   nextId++;
   planets.push(data);
-  res.status(201).send(data);
+  res.status(201).send({ data });
 }
 
 app.get('/planets', listPlanets);
@@ -111,9 +111,11 @@ app.post('/planets', createPlanet);
 
 // error handling
 // you can tell from the 4 params
+// error should be an object with a message and a status
 app.use((error, req, res, next) => {
   console.log(error);
-  res.send('There was an error.')
+  const { message = "An unknown error occurred.", status = 500 } = error;
+  res.status(status).send(message);
 })
 
 

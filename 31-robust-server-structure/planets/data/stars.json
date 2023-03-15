@@ -1,0 +1,669 @@
+{
+  "Sol": {
+    "name": "Sol",
+    "proper_names": [
+      "Sol",
+      "Helios",
+      "The Sun"
+    ],
+    "age": "4800 million years",
+    "standard_error_in_age": "0%",
+    "heavy_element_abundance": "100% of Sol",
+    "standard_error_in_heavy_element_abundance": "0%",
+    "arity": "singular",
+    "points_of_interest": "The \"8\" in the Detected Planets entry is not an error. Pluto is not a \"planet,\" but a huge, close-orbiting, low-eccentricity Kuiper Belt object. With a big moon. Of course, some die-hards out there still insist that it really is a planet, more for sentimental reasons than anything else. They're welcome to live in their little fantasy world. Neener neener.",
+    "right_ascension_and_declination": "0h0m0s, +00'0\" (epoch 2000.0)",
+    "distance_from_sol": "0 light-years (0 parsecs)",
+    "standard_error_in_distance": "0%",
+    "celestial_xyz_coordinates_in_ly": {
+      "x": "0",
+      "y": "0",
+      "z": "0"
+    },
+    "galactic_xyz_coordinates_in_ly": {
+      "x": "0",
+      "y": "0",
+      "z": "0"
+    },
+    "galactic_uvw_velocity_components_in_kms": {
+      "u": "0",
+      "v": "0",
+      "w": "0"
+    },
+    "spectral_class": "G2",
+    "luminosity_class": "V",
+    "apparent_visual_magnitude": "-26.72",
+    "absolute_visual_magnitude": "+4.85",
+    "visual_luminosity": "1 x Sol",
+    "color_indices": [
+      "B-V= +0.65",
+      "U-B= +0.10"
+    ],
+    "mass": "1 x Sol",
+    "diameter": "1 x Sol",
+    "comfort_zone_visual": "1 A.U.s",
+    "orbital_period_in_cz": "1 years",
+    "tidal_index_in_cz": "1",
+    "angular_size_of_star_in_sky_in_cz": "0.533111 degrees",
+    "detected_companions": "8"
+  },
+  "Alpha and Proxima Centauri": {
+    "name": "Alpha and Proxima Centauri",
+    "proper_names": [
+      "Alpha Centauri",
+      "Alpha and Proxima Centauri",
+      "Rigil Kentaurus",
+      "Toliman"
+    ],
+    "catalog_numbers": [
+      "Gliese (Gl) 559",
+      "Cape Photographic Durchmusterung (CPD) -605483",
+      "Smithsonian Astrophysical Observatory (SAO) 252838",
+      "Fifth Fundamental Catalogue (FK5) 538"
+    ],
+    "age": "6520 million years",
+    "standard_error_in_age": "4%",
+    "source_for_age": "Eggenberger et al., A&A v.417 p.235",
+    "heavy_element_abundance": "160% of Sol",
+    "source_for_heavy_element_abundance": "B. Edvardsson et al., \"Chemical Evolution of the Galactic Disc\", A&AP 275",
+    "arity": "trinary",
+    "points_of_interest": "Although the third brightest star in the system can be called \"Alpha Centauri C,\" as per the usual naming convention, it is usually referred to as Proxima Centauri, since the dimmest star of this triplet happens to be THE closest star to our own sun. Proxima is a flare star ; its flares about double the star's brightness, occurring sporadically from hour to hour. In fact, at any given moment, more than one flare may be operating. This varying brightness gave it the name \"V645 Centauri\" among variable star enthusiasts. Unfortunately, such flares are lethal to any life that might otherwise arise on planets in its comfort zone (if Proxima has any). Life on planets orbiting Alpha Centauri A or B, however, is almost as likely as life in our own star system. Since the smallest gap between A and B is 11.3 Astronomical Units, any planets closer to A or B than one-quarter of this distance (2.9 A.U.s) would be in stable orbits. Furthermore, 2.9 A.U.s is wider than the comfort zone of either of these stars, so any planets in the comfort zones of A or B would also be within the stable orbit region. These stars are young enough to have developed when the galaxy was rich with life-supporting and solid-planet-supporting heavy elements, yet old enough for any life there to have evolved into complex forms. Both Don C. Barry, and B. Edvardsson et al., estimated the age of this star system at 4.2 thousand-million years. The earliest estimate of this system's age, by Flannery & Ayres in the 1-April-1978 Astrophysical Journal , however, was 6 thousand-million years, which is closer to the most recent estimate.",
+    "right_ascension_and_declination": "14h39m35.88s, -6050'7.4\" (epoch 2000.0)",
+    "distance_from_sol": "4.395 light-years (1.347 parsecs)",
+    "standard_error_in_distance": "0.1883%",
+    "source_for_distance": "Hipparcos",
+    "celestial_xyz_coordinates_in_ly": {
+      "x": "-1.643",
+      "y": "-1.374",
+      "z": "-3.838"
+    },
+    "galactic_xyz_coordinates_in_ly": {
+      "x": "3.165",
+      "y": "-3.048",
+      "z": "-0.0818"
+    },
+    "data_for_a_and_bs_orbit_around_one_other": {
+      "combined_absolute_visual_magnitude": "+4.08",
+      "combined_visual_luminosity": "2.027 x Sol",
+      "period": "79.92 years",
+      "semimajor_axis": "23.60 A.U.s",
+      "eccentricity": "0.516",
+      "periastron_distance": "11.42 A.U.s",
+      "apastron_distance": "35.78 A.U.s",
+      "year_in_which_periastron_occurs": "1955.56",
+      "source_for_orbit_data": "W.D. Heintz",
+      "as_seen_from_a": "At periastron, B would appear as magnitude -20.59 At apastron, B would appear as magnitude -18.11",
+      "as_seen_from_b": "At periastron, A would appear as magnitude -21.92 At apastron, A would appear as magnitude -19.44"
+    },
+    "data_for_ab_and_proximas_orbit_around_one_other": {
+      "combined_absolute_visual_magnitude": "+4.08",
+      "combined_visual_luminosity": "2.027 x Sol",
+      "period": "500000 years",
+      "observed_separation": "17652 A.U.s",
+      "source_for_orbit_data": "Burnham's Celestial Handbook",
+      "as_seen_from_ab": "Proxima would appear as magnitude +5.15",
+      "as_seen_from_proxima": "(A-B) would appear as magnitude -6.26"
+    },
+    "companions": {},
+    "components": {
+      "a": {
+        "catalog_numbers": [
+          "Henry Draper (HD) 128620",
+          "Luyten Half-Second (LHS) 50",
+          "Hoffleit Bright Star (HR) 5459",
+          "Hipparcos Input Catalog (HIC) 71683"
+        ],
+        "proper_motion": "3.689 arcsec/yr (281.1 from north)",
+        "radial_velocity": "-26.2 km/sec",
+        "source_for_proper_motion_and_radial_velocity": "Gliese",
+        "galactic_uvw_velocity_components_in_kms": {
+          "u": "-32.00",
+          "v": "4.165",
+          "w": "14.15"
+        },
+        "spectral_class": "G2",
+        "luminosity_class": "V",
+        "apparent_visual_magnitude": "+0.01",
+        "absolute_visual_magnitude": "+4.36",
+        "visual_luminosity": "1.567 x Sol",
+        "color_indices": [
+          "B-V= +0.64",
+          "U-B= +0.23",
+          "R-I= +0.22"
+        ],
+        "mass": "1.1 x Sol",
+        "diameter": "1.227 x Sol",
+        "source_for_diameter": "European Southern Observatory",
+        "comfort_zone_visual": "1.252 A.U.s",
+        "orbital_period_in_cz": "1.33536 years",
+        "tidal_index_in_cz": "0.560791",
+        "angular_size_of_star_in_sky_in_cz": "0.522555 degrees"
+      },
+      "b": {
+        "catalog_numbers": [
+          "Henry Draper (HD) 128621",
+          "Luyten Half-Second (LHS) 51",
+          "Hoffleit Bright Star (HR) 5460",
+          "Hipparcos Input Catalog (HIC) 71681"
+        ],
+        "proper_motion": "3.689 arcsec/yr (281.1 from north)",
+        "radial_velocity": "-18.1 km/sec",
+        "source_for_proper_motion_and_radial_velocity": "Gliese",
+        "galactic_uvw_velocity_components_in_kms": {
+          "u": "-26.17",
+          "v": "-1.452",
+          "w": "14.00"
+        },
+        "spectral_class": "K4",
+        "luminosity_class": "V",
+        "apparent_visual_magnitude": "+1.34",
+        "absolute_visual_magnitude": "+5.69",
+        "visual_luminosity": "0.460 x Sol",
+        "color_indices": [
+          "B-V= +0.84",
+          "U-B= +0.64",
+          "R-I= +0.29"
+        ],
+        "mass": "0.85 x Sol",
+        "diameter": "0.869 x Sol",
+        "source_for_diameter": "Lionel",
+        "comfort_zone_visual": "0.678 A.U.s",
+        "orbital_period_in_cz": "221.389 days",
+        "tidal_index_in_cz": "2.72186",
+        "angular_size_of_star_in_sky_in_cz": "0.682783 degrees"
+      },
+      "proxima": {
+        "proper_names": [
+          "Proxima Centauri",
+          "V645 Centauri",
+          "Alpha Centauri Proxima",
+          "Alpha Proxima"
+        ],
+        "catalog_numbers": [
+          "Gliese (Gl) 551",
+          "Luyten Half-Second (LHS) 49",
+          "Hipparcos Input Catalog (HIC) 70890"
+        ],
+        "right_ascension_and_declination": "14h29m42.91s, -6240'47.2\" (epoch 2000.0)",
+        "distance_from_sol": "4.223 light-years (1.295 parsecs)",
+        "standard_error_in_distance": "0.31236%",
+        "source_for_distance": "Hipparcos",
+        "celestial_xyz_coordinates_in_ly": {
+          "x": "-1.539",
+          "y": "-1.178",
+          "z": "-3.752"
+        },
+        "galactic_xyz_coordinates_in_ly": {
+          "x": "2.946",
+          "y": "-3.021",
+          "z": "-0.169"
+        },
+        "proper_motion": "3.809 arcsec/yr (281.7 from north)",
+        "radial_velocity": "-16 km/sec",
+        "source_for_proper_motion_and_radial_velocity": "Gliese",
+        "galactic_uvw_velocity_components_in_kms": {
+          "u": "-24.68",
+          "v": "-2.473",
+          "w": "13.67"
+        },
+        "spectral_class": "M5e",
+        "luminosity_class": "V",
+        "apparent_visual_magnitude": "+11.05 (increasing to +10.12)",
+        "absolute_visual_magnitude": "+15.49 (increasing to +14.56)",
+        "visual_luminosity": "0.0000555 x Sol (increasing to 0.000131 x Sol)",
+        "variable_type": "UV Ceti flare star (eruptive variable)",
+        "color_indices": [
+          "B-V= +1.83",
+          "U-B= +1.43",
+          "R-I= +1.66"
+        ],
+        "mass": "0.123 x Sol",
+        "source_for_mass": "European Southern Observatory",
+        "diameter": "0.145 x Sol",
+        "source_for_diameter": "European Southern Observatory",
+        "comfort_zone_visual": "0.00745 A.U.s",
+        "orbital_period_in_cz": "16.0689 hours",
+        "tidal_index_in_cz": "297597",
+        "angular_size_of_star_in_sky_in_cz": "10.397477 degrees"
+      }
+    }
+  },
+  "Barnard's Star": {
+    "name": "Barnard's Star",
+    "proper_names": [
+      "Barnard's Star",
+      "Barnard's Runaway Star"
+    ],
+    "catalog_numbers": [
+      "Gliese (Gl) 699",
+      "Giclas (G) 140-24",
+      "Hipparcos Input Catalog (HIC) 87937",
+      "Bonner Durchmusterung (BD) +43561a",
+      "Luyten Half-Second (LHS) 57",
+      "Vyssotsky McCormick (McC) 799",
+      "MDSP 910",
+      "Luyten FT (LFT) 1385",
+      "Luyten Two-Tenth (LTT) 15309"
+    ],
+    "age": "about 10 000 million years",
+    "heavy_element_abundance": "20% of Sol",
+    "standard_error_in_heavy_element_abundance": "100%",
+    "source_for_heavy_element_abundance": "Strobel [Fe/H] Determinations",
+    "arity": "singular",
+    "points_of_interest": "Besides moving across the terrestrial sky faster than any other star (almost a third of a degree of arc per century!), Barnard's Star, we are certain, has planets. Although we have never actually seen these planets, wobbles in Barnard's Star's course indicate that it has two invisible companions, one with a mass of 0.7 times that of Jupiter (0.0007 x Sol) orbiting it at 3 Astronomical Units, and one with a mass of 1.15 times that of Jupiter (0.0015 x Sol) orbiting it at 5 A.U.s with an orbital period of 24 years. However, since this is an old Population II star which formed before the galaxy became enriched with heavy elements, these planets are going to be carbon and metal poor, probably little more than heavy balls of hydrogen and helium. (One catalog even states that, despite its velocitys moderate z-component, Barnard's Star actually belongs to the *very* old galactic halo population.) The British Interplanetary Society once proposed Project Daedalus, a mission to send an unmanned spacecraft to Barnard's Star using a deuterium/helium-3 nuclear fusion reaction to provide thrust. Such a mission would require both a larger spacecraft-construction infrastructure, and better hot-fusion technology, than are currently available.",
+    "right_ascension_and_declination": "17h57m48.515s, +441'35.83\" (epoch 2000.0)",
+    "distance_from_sol": "5.941 light-years (1.821 parsecs)",
+    "standard_error_in_distance": "0.287%",
+    "source_for_distance": "Hipparcos",
+    "celestial_xyz_coordinates_in_ly": {
+      "x": "-0.0566",
+      "y": "-5.920",
+      "z": "0.486"
+    },
+    "galactic_xyz_coordinates_in_ly": {
+      "x": "4.936",
+      "y": "3.001",
+      "z": "1.388"
+    },
+    "proper_motion": "10.31 arcsec/yr (355.8 from north)",
+    "radial_velocity": "-111 km/sec",
+    "source_for_proper_motion_and_radial_velocity": "Gliese",
+    "galactic_uvw_velocity_components_in_kms": {
+      "u": "-141.0",
+      "v": "3.334",
+      "w": "19.00"
+    },
+    "spectral_class": "M4",
+    "luminosity_class": "V",
+    "apparent_visual_magnitude": "+9.54",
+    "absolute_visual_magnitude": "+13.24",
+    "visual_luminosity": "0.000441 x Sol",
+    "color_indices": [
+      "B-V= +1.74",
+      "U-B= +1.29",
+      "R-I= +1.25"
+    ],
+    "mass": "0.158 x Sol",
+    "source_for_mass": "European Southern Observatory",
+    "diameter": "0.197 x Sol",
+    "source_for_diameter": "European Southern Observatory",
+    "comfort_zone_visual": "0.0210 A.U.s",
+    "orbital_period_in_cz": "2.79731 days",
+    "tidal_index_in_cz": "17049",
+    "angular_size_of_star_in_sky_in_cz": "4.988145 degrees",
+    "detected_companions": "2"
+  },
+  "Wolf 359": {
+    "name": "Wolf 359",
+    "proper_names": [
+      "CN Leonis"
+    ],
+    "catalog_numbers": [
+      "Wolf 359",
+      "Gliese (Gl) 406",
+      "Giclas (G) 45-20",
+      "Luyten FT (LFT) 750",
+      "Luyten Two-Tenth (LTT) 12923",
+      "Luyten Half-Second (LHS) 36"
+    ],
+    "age": "less than 10 000 million years",
+    "heavy_element_abundance": "Galactic plane population (about the same as Sol)",
+    "arity": "singular",
+    "points_of_interest": "Besides its proximity to our own sun, this tiny star is one of the least luminous known, even though astronomers suspect that such intrinsically faint stars are probably very common in space. Alpha Centauri Proxima is another super-dim star of this ilk; and, like Proxima Centauri, Wolf 359 is now known to be a flare star (hence the CN Leonis variable star designation). Wolf 359's flare outbursts are rarer and not as violent as those of Proxima Centauri or UV Ceti.",
+    "right_ascension_and_declination": "10h54m6s, +719'12\" (epoch 1950.0)",
+    "distance_from_sol": "7.797 light-years (2.391 parsecs)",
+    "standard_error_in_distance": "0.5941%",
+    "source_for_distance": "Gliese",
+    "celestial_xyz_coordinates_in_ly": {
+      "x": "-7.416",
+      "y": "2.193",
+      "z": "0.993"
+    },
+    "galactic_xyz_coordinates_in_ly": {
+      "x": "-1.896",
+      "y": "-3.902",
+      "z": "6.478"
+    },
+    "proper_motion": "4.696 arcsec/yr (234.6 from north)",
+    "radial_velocity": "13 km/sec",
+    "source_for_proper_motion_and_radial_velocity": "Gliese",
+    "galactic_uvw_velocity_components_in_kms": {
+      "u": "-26.23",
+      "v": "-44.30",
+      "w": "-18.72"
+    },
+    "spectral_class": "M6e",
+    "luminosity_class": "V",
+    "apparent_visual_magnitude": "+13.45",
+    "absolute_visual_magnitude": "+16.56",
+    "visual_luminosity": "0.0000207 x Sol",
+    "variable_type": "UV Ceti flare star (eruptive variable)",
+    "color_indices": [
+      "B-V= +2.00",
+      "U-B= +1.21",
+      "R-I= +1.84"
+    ],
+    "mass": "0.093 x Sol",
+    "diameter": "0.13 x Sol",
+    "comfort_zone_visual": "0.00455 A.U.s",
+    "orbital_period_in_cz": "8.83395 hours",
+    "tidal_index_in_cz": "984676",
+    "angular_size_of_star_in_sky_in_cz": "15.218242 degrees"
+  },
+  "Lalande 21185": {
+    "name": "Lalande 21185",
+    "catalog_numbers": [
+      "Lalande (LAL) 21185",
+      "Gliese (Gl) 411",
+      "Giclas (G) 119-52",
+      "Henry Draper (HD) 95735",
+      "Bonner Durchmusterung (BD) +362147",
+      "Luyten Half-Second (LHS) 37",
+      "Vyssotsky McCormick (McC) 594",
+      "Hipparcos Input Catalog (HIC) 54035",
+      "AGK3 Reference (AGK3R) 9911",
+      "Smithsonian Astrophysical Observatory (SAO) 62377",
+      "New Suspected Variable (NSV) 18593"
+    ],
+    "age": "3000 to 10 000 million years",
+    "heavy_element_abundance": "63% of Sol",
+    "source_for_heavy_element_abundance": "J.R. Mould's Spectral Analysis",
+    "arity": "singular",
+    "points_of_interest": "The z-component of Lalande 21185's velocity suggests that it's from the galactic halo population; however, J.R. Mould's spectral analysis (printed in vol. 226, page 923 of the Astrophysical Journal (1978)) says that the ratio of iron to hydrogen in the star is a whopping 60% of our sun's iron-to-hydrogen ratio, which is awfully iron-rich for a halo population star. The presence of emission lines in the star's spectrum would support the idea that this is a decently heavy-element-rich star as well. Wobbles in Lalande 21185's position were once thought to indicate an unseen object orbiting it, but subsequent analysis showed that no such wobbles were occurring.",
+    "right_ascension_and_declination": "11h3m20.228s, +3558'11.24\" (epoch 2000.0)",
+    "distance_from_sol": "8.312 light-years (2.548 parsecs)",
+    "standard_error_in_distance": "0.2314%",
+    "source_for_distance": "Hipparcos",
+    "celestial_xyz_coordinates_in_ly": {
+      "x": "-6.523",
+      "y": "1.646",
+      "z": "4.882"
+    },
+    "galactic_xyz_coordinates_in_ly": {
+      "x": "-3.359",
+      "y": "-0.320",
+      "z": "7.596"
+    },
+    "proper_motion": "4.807 arcsec/yr (186.8 from north)",
+    "radial_velocity": "-84.3 km/sec",
+    "source_for_proper_motion_and_radial_velocity": "Gliese",
+    "galactic_uvw_velocity_components_in_kms": {
+      "u": "45.67",
+      "v": "-53.58",
+      "w": "-74.30"
+    },
+    "spectral_class": "M2n",
+    "luminosity_class": "V",
+    "apparent_visual_magnitude": "+7.50",
+    "absolute_visual_magnitude": "+10.46",
+    "visual_luminosity": "0.00568 x Sol",
+    "variable_type": "BY Draconis (rotating variable)",
+    "color_indices": [
+      "B-V= +1.51",
+      "U-B= +1.12",
+      "R-I= +0.92"
+    ],
+    "mass": "0.403 x Sol",
+    "source_for_mass": "European Southern Observatory",
+    "diameter": "0.393 x Sol",
+    "source_for_diameter": "European Southern Observatory",
+    "comfort_zone_visual": "0.0754 A.U.s",
+    "orbital_period_in_cz": "11.9058 days",
+    "tidal_index_in_cz": "941.161",
+    "angular_size_of_star_in_sky_in_cz": "2.781843 degrees"
+  },
+  "Sirius": {
+    "name": "Sirius",
+    "proper_names": [
+      "Sirius",
+      "The Dog Star",
+      "Alpha Canis Majoris",
+      "9 Canis majoris"
+    ],
+    "catalog_numbers": [
+      "Gliese (Gl) 244",
+      "Bonner Durchmusterung (BD) -161591",
+      "Henry Draper (HD) 48915",
+      "Aitken Double Star (ADS) 5423",
+      "Luyten Two-Tenth (LTT) 2638",
+      "Luyten Half-Second (LHS) 219",
+      "Hoffleit Bright Star (HR) 2491",
+      "A.G. Clark (AGC) 1",
+      "Smithsonian Astrophysical Observatory (SAO) 151881",
+      "Fifth Fundamental Catalogue (FK5) 257",
+      "Hipparcos Input Catalog (HIC) 32349"
+    ],
+    "age": "300 million years",
+    "heavy_element_abundance": "410% of Sol",
+    "standard_error_in_heavy_element_abundance": "16%",
+    "source_for_heavy_element_abundance": "Strobel [Fe/H] Determinations",
+    "arity": "binary",
+    "points_of_interest": "While Sirius A is known for being the brightest star in the sky, Sirius B was the first White Dwarf to be discovered by humankind (that it took almost a century from the discovery of Sirius B to the acceptance of its White Dwarfness notwithstanding). Sirius B's calculated average density is 92 000 times that of the sun; one cubic inch of material at that density would weigh over two tons at the surface of the Earth. Electron-degeneracy theory predicts that below the surface layers, Sirius B has a uniform density and temperature throughout; however, the outer gaseous layers are probably not electron-degenerate, and thus would not be nearly as dense as the two-tons-to-the-cubic-inch figure previously quoted. (For more information about white dwarfs, see the Lightweight Stars .) Sirius A is a young star. It has to be; class A main sequence stars exhaust the nuclear fuel in their cores within 1000 million years and turn into red giants or Cepheid variables thereafter. Thus, if there are any life-bearing planets orbiting Sirius A, any life on them will be primitive (it took about 1500 million years for the first oxygen-producing life to develop on Earth, and over twice that long for multicellular organisms to arise). Due to slight perturbations in the orbit of Sirius B, an additional, unseen companion to either Sirius A or Sirius B is suspected.",
+    "right_ascension_and_declination": "6h45m8.871s, -1642'57.99\" (epoch 2000.0)",
+    "distance_from_sol": "8.601 light-years (2.637 parsecs)",
+    "standard_error_in_distance": "0.4149%",
+    "source_for_distance": "Hipparcos",
+    "celestial_xyz_coordinates_in_ly": {
+      "x": "-1.612",
+      "y": "8.078",
+      "z": "-2.474"
+    },
+    "galactic_xyz_coordinates_in_ly": {
+      "x": "-5.745",
+      "y": "-6.275",
+      "z": "-1.262"
+    },
+    "proper_motion": "1.328 arcsec/yr (204.3 from north)",
+    "radial_velocity": "-9.4 km/sec",
+    "source_for_proper_motion_and_radial_velocity": "Gliese",
+    "galactic_uvw_velocity_components_in_kms": {
+      "u": "15.34",
+      "v": "1.109",
+      "w": "-11.29"
+    },
+    "data_for_a_and_bs_orbit_around_one_other": {
+      "combined_absolute_visual_magnitude": "+1.46",
+      "combined_visual_luminosity": "22.61 x Sol",
+      "period": "50.09 years",
+      "semimajor_axis": "19.78 A.U.s",
+      "eccentricity": "0.592",
+      "periastron_distance": "8.069 A.U.s",
+      "apastron_distance": "31.49 A.U.s",
+      "year_in_which_periastron_occurs": "1994.31",
+      "source_for_orbit_data": "W.H. van den Bos",
+      "as_seen_from_a": "At periastron, B would appear as magnitude -15.70 At apastron, B would appear as magnitude -12.75",
+      "as_seen_from_b": "At periastron, A would appear as magnitude -25.57 At apastron, A would appear as magnitude -22.62"
+    },
+    "companions": {},
+    "components": {
+      "a": {
+        "spectral_class": "A1",
+        "luminosity_class": "V",
+        "apparent_visual_magnitude": "-1.43",
+        "absolute_visual_magnitude": "+1.46",
+        "visual_luminosity": "22.61 x Sol",
+        "color_indices": [
+          "B-V= +0.00",
+          "U-B= -0.04",
+          "R-I= -0.11"
+        ],
+        "mass": "2.35 x Sol",
+        "diameter": "2.03 x Sol",
+        "source_for_diameter": "Apparent Diameters and Absolute Radii of Stars (Fracassini+ 1988)",
+        "comfort_zone_visual": "4.755 A.U.s",
+        "orbital_period_in_cz": "6.76389 years",
+        "tidal_index_in_cz": "0.021858",
+        "angular_size_of_star_in_sky_in_cz": "0.227594 degrees"
+      },
+      "b": {
+        "catalog_numbers": [
+          "Eggen/Greenstein white dwarf (EG) 49"
+        ],
+        "spectral_class": "DA2",
+        "luminosity_class": "wd",
+        "apparent_visual_magnitude": "+8.44",
+        "absolute_visual_magnitude": "+11.33",
+        "visual_luminosity": "0.00255 x Sol",
+        "color_indices": [
+          "B-V= -0.03",
+          "U-B= -1.04"
+        ],
+        "mass": "0.98 x Sol",
+        "diameter": "0.022 x Sol",
+        "source_for_diameter": "Apparent Diameters and Absolute Radii of Stars (Fracassini+ 1988)",
+        "comfort_zone_visual": "0.0505 A.U.s",
+        "orbital_period_in_cz": "4.18372 days",
+        "tidal_index_in_cz": "7621.77",
+        "angular_size_of_star_in_sky_in_cz": "0.232372 degrees"
+      }
+    }
+  },
+  "UV Ceti": {
+    "name": "UV Ceti",
+    "catalog_numbers": [
+      "Luyten (L) 726-8",
+      "Luyten Double Star (LDS) 838",
+      "Gliese (Gl) 65",
+      "Giclas (G) 272-61"
+    ],
+    "arity": "binary",
+    "points_of_interest": "Properly, only the less bright star in this system (Luyten 726-8 B) bears the name UV Ceti, since it is a variable star  the UV indicates that this was the 35th variable star discovered in the constellation Cetus. It is an extreme flare star ; in less than a minute, it can quintuple its total brightness, afterwhich it will fall back down to normal brightness levels within two or three minutes; and then flare suddenly again after several hours. In 1952, UV Ceti was observed flaring to 75 times its normal brightness in only 20 seconds! If van de Kamp's orbital data are to be believed, these two stars would have to be exceedingly small and light -- their masses would be only 0.044 x Sol for the \"A\" star and 0.035 x Sol for UV Ceti. This would mean that, although each of these stars is brighter than Wolf 359, Wolf 359 would have a higher mass than both of these stars combined . However, if we assume that Worley & Behall's orbital data are the more accurate, the two stars' total mass would be 0.23 x Sol, which is more in keeping with the measurements of both their luminosities and their diameters.",
+    "right_ascension_and_declination": "1h36m25s, -1812'42\" (epoch 1950.0)",
+    "distance_from_sol": "8.554 light-years (2.623 parsecs)",
+    "standard_error_in_distance": "0.113%",
+    "source_for_distance": "Gliese",
+    "celestial_xyz_coordinates_in_ly": {
+      "x": "7.417",
+      "y": "3.318",
+      "z": "-2.673"
+    },
+    "galactic_xyz_coordinates_in_ly": {
+      "x": "-2.102",
+      "y": "0.169",
+      "z": "-8.290"
+    },
+    "proper_motion": "3.368 arcsec/yr (80.4 from north)",
+    "source_for_proper_motion": "Gliese",
+    "data_for_a_and_bs_orbit_around_one_other": {
+      "combined_absolute_visual_magnitude": "+14.79",
+      "combined_visual_luminosity": "0.000106 x Sol",
+      "period": "200 years",
+      "semimajor_axis": "14.61 A.U.s",
+      "eccentricity": "0.718",
+      "periastron_distance": "4.119 A.U.s",
+      "apastron_distance": "25.10 A.U.s",
+      "year_in_which_periastron_occurs": "1949",
+      "source_for_orbit_data": "P. van de Kamp",
+      "as_seen_from_a": "At periastron, B would appear as magnitude -12.89 At apastron, B would appear as magnitude -8.97",
+      "as_seen_from_b": "At periastron, A would appear as magnitude -13.02 At apastron, A would appear as magnitude -9.10"
+    },
+    "data_for_a_and_bs_orbit_take_2": {
+      "period": "26.52 years",
+      "semimajor_axis": "5.455 A.U.s",
+      "eccentricity": "0.615",
+      "periastron_distance": "2.100 A.U.s",
+      "apastron_distance": "8.810 A.U.s",
+      "year_in_which_periastron_occurs": "1971.88",
+      "source_for_orbit_data": "Worley & Behall",
+      "as_seen_from_a": "At periastron, B would appear as magnitude -14.35 At apastron, B would appear as magnitude -11.24",
+      "as_seen_from_b": "At periastron, A would appear as magnitude -14.48 At apastron, A would appear as magnitude -11.37"
+    },
+    "companions": {},
+    "components": {
+      "a": {
+        "proper_names": [
+          "BL Ceti"
+        ],
+        "catalog_numbers": [
+          "Luyten Half-Second (LHS) 9"
+        ],
+        "proper_motion": "3.368 arcsec/yr (80.4 from north)",
+        "radial_velocity": "29 km/sec",
+        "source_for_proper_motion_and_radial_velocity": "Gliese",
+        "galactic_uvw_velocity_components_in_kms": {
+          "u": "-43.00",
+          "v": "-19.19",
+          "w": "-19.42"
+        },
+        "spectral_class": "M5.5e",
+        "luminosity_class": "V",
+        "apparent_visual_magnitude": "+12.57",
+        "absolute_visual_magnitude": "+15.48",
+        "visual_luminosity": "0.0000561 x Sol",
+        "variable_type": "UV Ceti flare star (eruptive variable)",
+        "mass": "0.12 x Sol",
+        "diameter": "0.15 x Sol",
+        "source_for_diameter": "Apparent Diameters and Absolute Radii of Stars (Fracassini+ 1988)",
+        "comfort_zone_visual": "0.00749 A.U.s",
+        "orbital_period_in_cz": "16.4112 hours",
+        "tidal_index_in_cz": "285314",
+        "angular_size_of_star_in_sky_in_cz": "10.673077 degrees"
+      },
+      "b": {
+        "proper_names": [
+          "UV Ceti",
+          "Luyten's Flare Star"
+        ],
+        "catalog_numbers": [
+          "Luyten Half-Second (LHS) 10"
+        ],
+        "proper_motion": "3.368 arcsec/yr (80.4 from north)",
+        "radial_velocity": "32 km/sec",
+        "source_for_proper_motion_and_radial_velocity": "Gliese",
+        "galactic_uvw_velocity_components_in_kms": {
+          "u": "-43.74",
+          "v": "-19.13",
+          "w": "-22.33"
+        },
+        "spectral_class": "M6e",
+        "luminosity_class": "V",
+        "apparent_visual_magnitude": "+12.70 (increasing to +8.00)",
+        "absolute_visual_magnitude": "+15.61 (increasing to +10.91)",
+        "visual_luminosity": "0.0000498 x Sol (increasing to 0.00378 x Sol)",
+        "variable_type": "UV Ceti flare star (eruptive variable)",
+        "mass": "0.1 x Sol",
+        "diameter": "0.14 x Sol",
+        "source_for_diameter": "Apparent Diameters and Absolute Radii of Stars (Fracassini+ 1988)",
+        "comfort_zone_visual": "0.00706 A.U.s",
+        "orbital_period_in_cz": "16.4334 hours",
+        "tidal_index_in_cz": "284542",
+        "angular_size_of_star_in_sky_in_cz": "10.576152 degrees"
+      }
+    }
+  },
+  "Eggen/Greenstein white dwarf 406": {
+    "name": "Eggen/Greenstein white dwarf 406",
+    "catalog_numbers": [
+      "Giclas (G) 267-18",
+      "Luyten Half-Second (LHS) 1008",
+      "Eggen/Greenstein white dwarf (EG) 406",
+      "Luyten Two-Tenth (LTT) 3"
+    ],
+    "arity": "singular",
+    "right_ascension_and_declination": "0h0m6s, -3429'41\" (epoch 1950.0)",
+    "distance_from_sol": "43.4 light-years (13.3 parsecs)",
+    "standard_error_in_distance": "8.5158%",
+    "source_for_distance": "Gliese",
+    "celestial_xyz_coordinates_in_ly": {
+      "x": "35.7",
+      "y": "0.016",
+      "z": "-24.6"
+    },
+    "galactic_xyz_coordinates_in_ly": {
+      "x": "9.46",
+      "y": "-0.68",
+      "z": "-42.3"
+    },
+    "proper_motion": "0.758 arcsec/yr (168.6 from north)",
+    "source_for_proper_motion": "Gliese",
+    "spectral_class": "DC9",
+    "luminosity_class": "wd",
+    "apparent_visual_magnitude": "+14.90",
+    "absolute_visual_magnitude": "+14.28",
+    "visual_luminosity": "0.00017 x Sol",
+    "color_indices": [
+      "B-V= +0.46"
+    ],
+    "comfort_zone_visual": "0.013 A.U.s"
+  }
+}

@@ -61,7 +61,7 @@ app.get('/planets/coolestPlanet', (req, res, next) => {
 
 // using planets data from data directory
 
-const planets = require('../data');
+const { planets } = require('../data');
 
 const listPlanets = (req, res, next) => {
   // if limitedData is true, only send some of the info

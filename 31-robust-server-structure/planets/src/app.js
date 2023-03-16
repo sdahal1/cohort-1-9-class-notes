@@ -105,9 +105,22 @@ const createPlanet = (req, res, next) => {
   res.status(201).send({ data });
 }
 
+const destroyPlanet = (req, res, next) => {
+  // find the planet in my planets array
+  const index = planets.findIndex(planet => planet.id === req.params.id);
+  // splice the planets array to remove it
+  planets.splice(index, 1);
+  // send a status code indicating that it worked
+  res.status(204).send();
+}
+
+const read = [validatePlanetExists, readPlanet]
+const destroy = [validatePlanetExists, destroyPlanet];
+
 app.get('/planets', listPlanets);
-app.get('/planets/:id', validatePlanetExists, readPlanet);
+app.get('/planets/:id', read);
 app.post('/planets', createPlanet);
+app.delete('/planets/:id', destroy);
 
 // error handling
 // you can tell from the 4 params

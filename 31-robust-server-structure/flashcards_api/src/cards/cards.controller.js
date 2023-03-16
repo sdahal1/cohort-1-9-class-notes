@@ -9,6 +9,18 @@ const list = (_req, res, _next) => {
     .json({ data: cards });
 }
 
+const makeAFunctionThatChecksForField = (field) => {
+  const validateFieldExists = (req, res, next) => {
+    if (!req.body.data[field]) {
+      return next({ status: 400, message: `${field} is required.` })
+    } else {
+      return next();
+    }
+  }
+  return validateFieldExists;
+}
+
+
 const create = (req, res, next) => {
   const { data } = req.body;
   if (!data) {
@@ -19,13 +31,13 @@ const create = (req, res, next) => {
   const { front, back, deckId } = data;
 
   // Validate required fields are present
-  const requiredFields = ["front", "back", "deckId"];
-  for (const field of requiredFields) {
-    if (!data[field]) {
-      const message = `'${field}' is required`;
-      return next({ status: 400, message });
-    }
-  }
+  // const requiredFields = ["front", "back", "deckId"];
+  // for (const field of requiredFields) {
+  //   if (!data[field]) {
+  //     const message = `'${field}' is required`;
+  //     return next({ status: 400, message });
+  //   }
+  // }
 
   // Validate deck exists
   const deck = decks.find(d => d.id === deckId);
@@ -52,7 +64,7 @@ const create = (req, res, next) => {
     .json({ data: card });
 };
 
-const read = (req, res, next) => {
+const validateCardExists = (req, res, next) => {
   const { cardId } = req.params;
   const card = cards.find(c => c.id === cardId);
 
@@ -60,7 +72,15 @@ const read = (req, res, next) => {
   if (!card) {
     const message = `Card with id ${cardId} not found.`;
     return next({ status: 404, message });
+  } else {
+    next();
   }
+}
+
+const read = (req, res, next) => {
+  const { cardId } = req.params;
+  const card = cards.find(c => c.id === cardId);
+
 
   res.json({ data: card });
 };
@@ -69,20 +89,24 @@ const destroy = (req, res, next) => {
   const { cardId } = req.params;
   const cardIndex = cards.findIndex(c => c.id === cardId);
 
-  if (cardIndex === -1) {
-    const message = `Card id ${cardId} does not exist`;
-    return next({ status: 404, message });
-  }
-
   cards.splice(cardIndex, 1);
   res
     .status(204)
     .send();
 };
 
+// the even wilder way of doing this
+// let fields = ['front', 'back', 'deckId']
+// fields.map(field => makeAFunctionThatChecksForField(field))
+// inside of create, I would spread the result of that map
 module.exports = {
   list,
-  create,
-  read,
-  destroy
+  create: [
+    makeAFunctionThatChecksForField('front'),
+    makeAFunctionThatChecksForField('back'),
+    makeAFunctionThatChecksForField('deckId'),
+    create
+  ],
+  read: [validateCardExists, read],
+  destroy: [validateCardExists, destroy]
 };

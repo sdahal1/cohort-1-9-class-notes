@@ -4,9 +4,13 @@ const { cards, decks } = require('../dataStore');
 const cuid = require("cuid");
 const logger = require('../logger');
 
-const list = (_req, res, _next) => {
-  res
-    .json({ data: cards });
+const list = (req, res, _next) => {
+  if (req.params.deckId) {
+    let filteredCards = cards.filter(card => card.deckId === req.params.deckId);
+    res.json({ data: filteredCards });
+  } else {
+    res.json({ data: cards });
+  }
 }
 
 const makeAFunctionThatChecksForField = (field) => {
@@ -66,29 +70,29 @@ const create = (req, res, next) => {
 
 const validateCardExists = (req, res, next) => {
   const { cardId } = req.params;
-  const card = cards.find(c => c.id === cardId);
+  const cardIndex = cards.findIndex(c => c.id === cardId);
 
   // make sure we found a card
-  if (!card) {
+  if (cardIndex < 0) {
     const message = `Card with id ${cardId} not found.`;
     return next({ status: 404, message });
   } else {
+    // save the card and its index for future middleware use
+    res.locals.cardIndex = cardIndex;
+    res.locals.card = cards[cardIndex];
     next();
   }
 }
 
 const read = (req, res, next) => {
-  const { cardId } = req.params;
-  const card = cards.find(c => c.id === cardId);
-
-
+  // access the card that we saved during validateCardExists
+  const { card } = res.locals;
   res.json({ data: card });
 };
 
 const destroy = (req, res, next) => {
-  const { cardId } = req.params;
-  const cardIndex = cards.findIndex(c => c.id === cardId);
-
+  // access the cardIndex we saved during validateCardExists
+  const { cardIndex } = res.locals;
   cards.splice(cardIndex, 1);
   res
     .status(204)
@@ -100,7 +104,7 @@ const destroy = (req, res, next) => {
 // fields.map(field => makeAFunctionThatChecksForField(field))
 // inside of create, I would spread the result of that map
 module.exports = {
-  list,
+  list: list,
   create: [
     makeAFunctionThatChecksForField('front'),
     makeAFunctionThatChecksForField('back'),

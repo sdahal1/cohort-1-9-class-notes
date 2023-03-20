@@ -26,11 +26,6 @@ const makeAFunctionThatChecksForField = (field) => {
 
 
 const create = (req, res, next) => {
-  const { data } = req.body;
-  if (!data) {
-    const message = `Body must have 'data' key`;
-    return next({ status: 400, message });
-  }
 
   const { front, back, deckId } = data;
 
@@ -68,6 +63,17 @@ const create = (req, res, next) => {
     .json({ data: card });
 };
 
+const validateDataExists = (req, res, next) => {
+  const data = req.body.data;
+  if (data) {
+    next();
+  } else {
+    next({
+      status: 400,
+      message: 'request must include data'
+    })
+  }
+}
 const validateCardExists = (req, res, next) => {
   const { cardId } = req.params;
   const cardIndex = cards.findIndex(c => c.id === cardId);
@@ -90,6 +96,22 @@ const read = (req, res, next) => {
   res.json({ data: card });
 };
 
+const update = (req, res, next) => {
+  const { card, cardIndex } = res.locals;
+  const { front, back, deckId } = req.body.data;
+  // create an object with the updated data
+  const updatedCard = {
+    ...card,
+    front,
+    back,
+    deckId
+  };
+  // replace the card object in the cards array with my updated object
+  cards.splice(cardIndex, 1, updatedCard);
+  // send as the response the updated card object
+  res.json({data: updatedCard});
+}
+
 const destroy = (req, res, next) => {
   // access the cardIndex we saved during validateCardExists
   const { cardIndex } = res.locals;
@@ -106,11 +128,18 @@ const destroy = (req, res, next) => {
 module.exports = {
   list: list,
   create: [
+    validateDataExists,
     makeAFunctionThatChecksForField('front'),
     makeAFunctionThatChecksForField('back'),
     makeAFunctionThatChecksForField('deckId'),
     create
   ],
   read: [validateCardExists, read],
+  update: [
+    validateCardExists,
+    validateDataExists,
+    ...['front', 'back', 'deckId'].map(makeAFunctionThatChecksForField),
+    update
+  ],
   destroy: [validateCardExists, destroy]
 };

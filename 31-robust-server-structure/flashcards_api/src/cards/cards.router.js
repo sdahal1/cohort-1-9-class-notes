@@ -5,7 +5,7 @@ const cardsController = require('./cards.controller');
 
 // mergeParams gives us access to params from the parent router
 // in this case, from the decks router
-const router = express.Router({mergeParams: true});
+const router = express.Router({ mergeParams: true });
 
 
 // a route is the combination of a method and a path
@@ -23,6 +23,7 @@ router.route("/")
 
 router.route("/:cardId")
   .get(cardsController.read)
+  .put(cardsController.update)
   .delete(cardsController.destroy)
   .all(methodNotAllowed);
 

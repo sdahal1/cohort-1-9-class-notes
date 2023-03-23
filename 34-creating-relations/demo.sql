@@ -87,4 +87,20 @@ SELECT address FROM suppliers
 	JOIN orders ON items.id = orders.item_id
 	WHERE shipping_status != 'Shipped';
 
-	
+	-- other joins
+
+DELETE FROM orders WHERE item_id = 5;
+
+ALTER TABLE orders ALTER COLUMN item_id DROP NOT NULL;
+
+INSERT INTO orders (amount, total_cost, shipping_status) VALUES (0, 0, 'Pending');
+
+SELECT * FROM items JOIN orders ON items.id = orders.item_id;
+
+SELECT * FROM items LEFT JOIN orders ON items.id = orders.item_id;
+-- LEFT JOIN suppliers_items ON suppliers_items.item_id = items.id;
+
+SELECT * FROM items RIGHT JOIN orders ON items.id = orders.item_id WHERE shipping_status != 'Delivered';
+
+SELECT * FROM items a FULL JOIN orders ON a.id = orders.item_id;
+

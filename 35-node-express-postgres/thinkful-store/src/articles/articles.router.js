@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { list, create, read, update, destroy } = require("./articles.controller");
 
 
+
 //creating endpoints for when we reach /articles
 // /articles get all and create
 // /articles/:articleId get one, delete one, update one

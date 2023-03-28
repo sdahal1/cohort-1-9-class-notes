@@ -11,6 +11,9 @@ const asyncErrorBoundary = require("../errors/asyncErrorBoundary")
 
 const wrappedList = asyncErrorBoundary(list)
 
+
+
+
 async function list(req, res, _next) {
     let data = await getAllArticles();
     res.json({data})
@@ -42,8 +45,8 @@ async function read(req, res, next) {
 
 module.exports = {
     list: wrappedList,
-    create: create,
-    read: read,
-    destroy: destroy,
-    update: update
+    create: asyncErrorBoundary(create),
+    read: asyncErrorBoundary(read),
+    destroy: asyncErrorBoundary(destroy),
+    update: asyncErrorBoundary(update)
 }

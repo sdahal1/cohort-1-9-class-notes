@@ -9,7 +9,7 @@ const articles = [
   { article_title: "Article 3", article_content: "This is some content." },
 ];
  
-exports.seed = function (knex) {
+exports.seed = async function(knex) {
   return knex
     .raw("TRUNCATE TABLE articles RESTART IDENTITY CASCADE")
     .then(function () {

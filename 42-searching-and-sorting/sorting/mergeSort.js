@@ -9,7 +9,6 @@ splitting array in half until we get a single sorted array
 merge the sorted halves, and put the small ones in first
         [8]    [3]     [5]     [4]     [7]     [6]     [1]      [2]
                     [3,8]    [4,5]    [6,7]    [1,2]
-                         l                   r
                         [3,4,5,8]           [1,2,6,7]
                             [1,2,3,4,5,6,7,8]
 */
@@ -56,4 +55,4 @@ function merge(leftArr, rightArr, compare) {
         leftIndex < leftArr.length ? leftArr.slice(leftIndex) : rightArr.slice(rightIndex)
     );
 }
-console.log(mergeSort([10,24,73,76], compare));
+console.log(mergeSort([10,73,24,76], compare));

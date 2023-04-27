@@ -81,3 +81,5 @@ class Queue {
         return dequeued.value;
     }
 }
+
+module.exports = Queue;

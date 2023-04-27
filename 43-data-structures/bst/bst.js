@@ -1,3 +1,4 @@
+const Queue = require("../queue/queue");
 class BST {
     constructor(key = null, value = null, parent = null) {
         this.key = key;
@@ -120,10 +121,93 @@ class BST {
         }
         return this.right._findMax(); // keep traversing left recursively
     }
+
+    //pre order we push the root node first
+    dfsPreOrder(values = []) {
+        //process
+        values.push(this.value);
+        //step left recursively
+        if (this.left) {
+            this.left.dfsPreOrder(values);
+        }
+        //step right recursively
+        if (this.right) {
+            this.right.dfsPreOrder(values);
+        }
+        return values
+    }
+
+    //post order we push the root node at the end
+    dfsPostOrder(values = []) {
+        //step left recursively
+        if (this.left) {
+            this.left.dfsPostOrder(values);
+        }
+        //step right recursively
+        if (this.right) {
+            this.right.dfsPostOrder(values);
+        }
+        //process
+        values.push(this.value);
+        return values
+    }
+
+    //traversal that gives us our tree sorted
+    dfsInOrder(values = []) {
+        //step left recursively
+        if (this.left) {
+            this.left.dfsInOrder(values);
+        }
+        //process
+        values.push(this.value);
+        //step right recursively
+        if (this.right) {
+            this.right.dfsInOrder(values);
+        }
+        return values
+    }
+
+    /*
+        4
+    2       6
+  1   3   5   7 
+*/
+    breadthFirstSearch(values = []) {
+        //utilizing Qs constant time for enqueue dequeue
+        let queue = new Queue(); // init new Q
+        queue.enqueue(this); //put the root node in Q
+        let node = queue.dequeue(); // take it out and start traversing
+
+        while (node) {
+            //process
+            values.push(node.value);
+            //going to check left
+            if (node.left) {
+                //put the left child in Q
+                queue.enqueue(node.left);
+            }
+            //going to check right
+            if (node.right) {
+                //put the right child in Q
+                queue.enqueue(node.right);
+            }
+            //we are done processing the curr node
+            // we need to move on to the next node
+            node = queue.dequeue();
+        }
+        return values;
+    }
 }
 
-let BTS = new BST(5,5)
-BTS.insert(4,4).insert(2,2).insert(6,6).insert(7,7).insert(8,8).insert(5,5)
+let BTS = new BST()
+BTS.insert(4, 4).insert(2, 2).insert(6, 6).insert(1, 1).insert(3, 3).insert(5, 5).insert(7, 7)
+console.log(BTS.dfsPreOrder()); // [ 4,2,1,3,6,5,7]
+console.log(BTS.dfsPostOrder()); // [ 1,3,2,5,7,6,4 ]
+console.log(BTS.dfsInOrder()); // [ 1,2,3,4,5,6,7 ]
+/*
+        4
+    2       6
+  1   3   5   7 
+*/
 
-BTS.remove(5)
-BTS.remove(8)
+
